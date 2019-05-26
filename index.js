@@ -5,8 +5,9 @@ if (process.argv.length < 3) {
   }
   // Read the file and print its contents.
   var fs = require('fs'), filename = process.argv[2];
-  debugger;
+ 
   fs.readFile(filename, 'utf8', function(err, data) {
+    debugger;
     if (err) throw err;
     console.log('OK: ' + filename);
     console.log(data)
