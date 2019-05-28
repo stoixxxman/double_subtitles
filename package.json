@@ -1,0 +1,23 @@
+{
+  "name": "ds-program",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "subtitle": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoixxxman/srt-bot.git"
+  },
+  "author": "stoixxxman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stoixxxman/srt-bot/issues"
+  },
+  "homepage": "https://github.com/stoixxxman/srt-bot#readme"
+}

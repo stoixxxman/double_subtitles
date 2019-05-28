@@ -1,0 +1,1 @@
+dir_to_gitignore/node_modules
