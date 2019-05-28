@@ -7,27 +7,29 @@ if (process.argv.length < 3) {
 // Read the file and print its contents.
 var fs = require('fs'), filename = process.argv[2];
 
-
 fs.readFile(filename, 'utf8', function (err, data) {
   if (err) throw err;
   const parsedSubs = parse(data);
-
-
-  const phrase = parsedSubs[0].text;
-
+  let i = 0;
+  while(parsedSubs[i].text) {
+  const phrase = parsedSubs[i].text;
   const arrayOfWords = phrase.split(/[' '|'\n']/i);
   const cleanedArray = [];
   arrayOfWords.forEach((el) => {
-    cleanedArray.push(el.replace(/[,|\.|\!]/i, ''));
+    cleanedArray.push(el.replace(/[\,|\.|\!|\-]/i, ''));
+    //Я крч сделал но почемуто файл ломается с 4 субтитра
+    //Также так и не понял как удалять 's 're  а так в принципе все выводит вроде
+    
   });
 
-  console.log(arrayOfWords);
-  console.log(cleanedArray);
+  console.log(i, arrayOfWords);
+  console.log(i, cleanedArray);
+  i=i+1;
 
-  //console.log(parsedSubs[0].text);
+  //console.log(parsedSubs[i].text);
 
   //console.log(parsedSubs);
-});
+}});
 
 
 
