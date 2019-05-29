@@ -10,26 +10,34 @@ var fs = require('fs'), filename = process.argv[2];
 fs.readFile(filename, 'utf8', function (err, data) {
   if (err) throw err;
   const parsedSubs = parse(data);
-  let i = 0;
-  while(parsedSubs[i].text) {
-  const phrase = parsedSubs[i].text;
-  const arrayOfWords = phrase.split(/[' '|'\n']/i);
+  
   const cleanedArray = [];
-  arrayOfWords.forEach((el) => {
-    cleanedArray.push(el.replace(/[\,|\.|\!|\-]/i, ''));
-    //Я крч сделал но почемуто файл ломается с 4 субтитра
-    //Также так и не понял как удалять 's 're  а так в принципе все выводит вроде
+  
+  for (let i = 0; i < parsedSubs.length; i += 1) {
+    const phrase = parsedSubs[i].text;
+    const arrayOfWords = phrase.split(/[' '|'\n']/i);
+    arrayOfWords.forEach((el) => {
+      cleanedArray.push(el.replace(/[\,|\.|\!|\-]/i, ''));
+      //Я крч сделал но почемуто файл ломается с 4 субтитра
+      //Также так и не понял как удалять 's 're  а так в принципе все выводит вроде
+
+    });
+
+    //console.log(parsedSubs[i].text);
     
-  });
+    //console.log(parsedSubs);
+  }
 
-  console.log(i, arrayOfWords);
-  console.log(i, cleanedArray);
-  i=i+1;
+  console.log(cleanedArray);
 
-  //console.log(parsedSubs[i].text);
+  
+  //удалить <i>
+  //удалить </i>
+  //удалить ?
+  //удалить пустые слова ''
 
-  //console.log(parsedSubs);
-}});
+
+});
 
 
 
