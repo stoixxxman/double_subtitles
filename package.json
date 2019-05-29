@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "subtitle": "^2.0.3"
+    "subtitle": "^2.0.3",
+    "unique-words": "^2.0.1"
   },
   "devDependencies": {},
   "scripts": {

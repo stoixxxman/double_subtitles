@@ -1,3 +1,17 @@
+function remove_duplicates(array_){
+  var ret_array = new Array();
+  for (var a = 0 ; a < array_.length ;  a += 1) {
+      for (var b = 0; b < array_.length;  b+=1) {
+          if(array_[a] == array_[b] && a != b){
+              delete array_[b];
+          }
+      };
+      if(array_[a] != undefined)
+          ret_array.push(array_[a]);
+  };
+  return ret_array;
+}
+
 const { parse } = require('subtitle');
 // Make sure we got a filename on the command line.
 if (process.argv.length < 3) {
@@ -6,40 +20,33 @@ if (process.argv.length < 3) {
 }
 // Read the file and print its contents.
 var fs = require('fs'), filename = process.argv[2];
-
+const reg = / .+? /g;
 fs.readFile(filename, 'utf8', function (err, data) {
   if (err) throw err;
   const parsedSubs = parse(data);
   
-  const cleanedArray = [];
-  
+  let cleanedArray = [];
   for (let i = 0; i < parsedSubs.length; i += 1) {
     const phrase = parsedSubs[i].text;
     const arrayOfWords = phrase.split(/[' '|'\n']/i);
     arrayOfWords.forEach((el) => {
-      cleanedArray.push(el.replace(/[\,|\.|\!|\-]/i, ''));
-      //Я крч сделал но почемуто файл ломается с 4 субтитра
-      //Также так и не понял как удалять 's 're  а так в принципе все выводит вроде
-
+      cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, ''));
+      cleanedArray = cleanedArray.filter(function(el){return el != '-' });
+      cleanedArray = cleanedArray.filter(function(el){return el != '--' });
+      cleanedArray = cleanedArray.filter(function(el){return el != '' });
+      cleanedArray = cleanedArray.filter(function(el){return el != '\s' });
+     
     });
-
-    //console.log(parsedSubs[i].text);
-    
-    //console.log(parsedSubs);
+    //console.log(phrase.match(/\b \b/));
   }
-
-  console.log(cleanedArray);
-
+  
+  
+  //unique(cleanedArray);
+  console.log(parsedSubs);
+  console.log(remove_duplicates(cleanedArray));
   
   //удалить <i>
   //удалить </i>
   //удалить ?
   //удалить пустые слова ''
-
-
 });
-
-
-
-
-
