@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cambridge-dictionary": "^0.1.1",
     "subtitle": "^2.0.3",
     "unique-words": "^2.0.1"
   },
