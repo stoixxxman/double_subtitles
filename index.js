@@ -1,4 +1,4 @@
-function remove_duplicates(array_){
+/*function remove_duplicates(array_){
   var ret_array = new Array();
   for (var a = 0 ; a < array_.length ;  a += 1) {
       for (var b = 0; b < array_.length;  b+=1) {
@@ -10,9 +10,10 @@ function remove_duplicates(array_){
           ret_array.push(array_[a]);
   };
   return ret_array;
-}
+}*/
 
 const { parse } = require('subtitle');
+const unique = require('unique-words');
 // Make sure we got a filename on the command line.
 if (process.argv.length < 3) {
   console.log('Usage: node ' + process.argv[1] + ' FILENAME');
@@ -39,14 +40,10 @@ fs.readFile(filename, 'utf8', function (err, data) {
     });
     //console.log(phrase.match(/\b \b/));
   }
-  
+  cleanedArray
   
   //unique(cleanedArray);
   console.log(parsedSubs);
-  console.log(remove_duplicates(cleanedArray));
-  
-  //удалить <i>
-  //удалить </i>
-  //удалить ?
-  //удалить пустые слова ''
+ // console.log(remove_duplicates(cleanedArray));
+  console.log(unique(cleanedArray));
 });
