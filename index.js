@@ -11,10 +11,8 @@
   };
   return ret_array;
 }*/
-
 const { parse } = require('subtitle');
 const unique = require('unique-words');
-import cambridgeDictionary from '../src';
 // Make sure we got a filename on the command line.
 if (process.argv.length < 3) {
   console.log('Usage: node ' + process.argv[1] + ' FILENAME');
@@ -41,10 +39,22 @@ fs.readFile(filename, 'utf8', function (err, data) {
     });
     //console.log(phrase.match(/\b \b/));
   }
-  cleanedArray
-  
-  //unique(cleanedArray);
-  console.log(parsedSubs);
+  cleanedArray = unique(cleanedArray);
+  //console.log(parsedSubs);
  // console.log(remove_duplicates(cleanedArray));
-  console.log(unique(cleanedArray));
+  //console.log(cleanedArray);
+  
+  const cambridgeDictionary = require('cambridge-dictionary');
+  
+  
+
+  for(let i = 0; i < cleanedArray.length; i+=1){
+  cambridgeDictionary.getExplanation(cleanedArray[i])
+  .then(console.log)
+  .catch(console.error);
+  }
+  
+
+  
+  
 });
