@@ -20,41 +20,51 @@ if (process.argv.length < 3) {
 }
 // Read the file and print its contents.
 var fs = require('fs'), filename = process.argv[2];
-const reg = / .+? /g;
+
+let cleanedArray = [];
+
 fs.readFile(filename, 'utf8', function (err, data) {
   if (err) throw err;
   const parsedSubs = parse(data);
   
-  let cleanedArray = [];
+  
   for (let i = 0; i < parsedSubs.length; i += 1) {
     const phrase = parsedSubs[i].text;
     const arrayOfWords = phrase.split(/[' '|'\n']/i);
     arrayOfWords.forEach((el) => {
-      cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, ''));
+      cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, '').toLowerCase());
       cleanedArray = cleanedArray.filter(function(el){return el != '-' });
       cleanedArray = cleanedArray.filter(function(el){return el != '--' });
       cleanedArray = cleanedArray.filter(function(el){return el != '' });
       cleanedArray = cleanedArray.filter(function(el){return el != '\s' });
+      
      
     });
     //console.log(phrase.match(/\b \b/));
   }
-  cleanedArray = unique(cleanedArray);
-  //console.log(parsedSubs);
- // console.log(remove_duplicates(cleanedArray));
-  //console.log(cleanedArray);
   
+  cleanedArray = unique(cleanedArray);
+  console.log(cleanedArray);
   const cambridgeDictionary = require('cambridge-dictionary');
   
+  const arDef = [];
   
-
   for(let i = 0; i < cleanedArray.length; i+=1){
-  cambridgeDictionary.getExplanation(cleanedArray[i])
-  .then(console.log)
-  .catch(console.error);
-  }
-  
+    cambridgeDictionary.getExplanation(cleanedArray[i])
+    .then(.explanations)
+    .catch(console.error);
+    
+    //arDef[i] = new cambridgeDictionary.getExplanation(cleanedArray[i]);
+    //arDef[i] = arDef[i].explanations[i].explanations.senses;
+    //console.log(arDef[i]);
+    //.then(arDef[i])
+    //.catch(console.error);
+    /*let p = new cambridgeDictionary((resolve, reject) => {
+      resolve .getExplanation(cleanedArray[i]){
 
-  
-  
+      }
+      throw new Error("o_O");
+    })*/
+  }
+   
 });
