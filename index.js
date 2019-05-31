@@ -24,37 +24,37 @@ const reg = / .+? /g;
 fs.readFile(filename, 'utf8', function (err, data) {
   if (err) throw err;
   const parsedSubs = parse(data);
-  
+
   let cleanedArray = [];
   for (let i = 0; i < parsedSubs.length; i += 1) {
     const phrase = parsedSubs[i].text;
     const arrayOfWords = phrase.split(/[' '|'\n']/i);
     arrayOfWords.forEach((el) => {
       cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, ''));
-      cleanedArray = cleanedArray.filter(function(el){return el != '-' });
-      cleanedArray = cleanedArray.filter(function(el){return el != '--' });
-      cleanedArray = cleanedArray.filter(function(el){return el != '' });
-      cleanedArray = cleanedArray.filter(function(el){return el != '\s' });
-     
+      cleanedArray = cleanedArray.filter(function (el) { return el != '-' });
+      cleanedArray = cleanedArray.filter(function (el) { return el != '--' });
+      cleanedArray = cleanedArray.filter(function (el) { return el != '' });
+      cleanedArray = cleanedArray.filter(function (el) { return el != '\s' });
+
     });
     //console.log(phrase.match(/\b \b/));
   }
   cleanedArray = unique(cleanedArray);
   //console.log(parsedSubs);
- // console.log(remove_duplicates(cleanedArray));
+  // console.log(remove_duplicates(cleanedArray));
   //console.log(cleanedArray);
-  
+
   const cambridgeDictionary = require('cambridge-dictionary');
-  
-  
 
-  for(let i = 0; i < cleanedArray.length; i+=1){
-  cambridgeDictionary.getExplanation(cleanedArray[i])
-  .then(console.log)
-  .catch(console.error);
+
+
+  for (let i = 0; i < cleanedArray.length; i += 1) {
+    cambridgeDictionary.getExplanation(cleanedArray[i])
+      .then(console.log)
+      .catch(console.error);
   }
-  
 
-  
-  
+
+
+
 });
