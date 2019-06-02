@@ -26,45 +26,42 @@ let cleanedArray = [];
 fs.readFile(filename, 'utf8', function (err, data) {
   if (err) throw err;
   const parsedSubs = parse(data);
-  
-  
+
+
   for (let i = 0; i < parsedSubs.length; i += 1) {
     const phrase = parsedSubs[i].text;
     const arrayOfWords = phrase.split(/[' '|'\n']/i);
     arrayOfWords.forEach((el) => {
       cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, '').toLowerCase());
-      cleanedArray = cleanedArray.filter(function(el){return el != '-' });
-      cleanedArray = cleanedArray.filter(function(el){return el != '--' });
-      cleanedArray = cleanedArray.filter(function(el){return el != '' });
-      cleanedArray = cleanedArray.filter(function(el){return el != '\s' });
-      
-     
+      cleanedArray = cleanedArray.filter(function (el) { return el != '-' });
+      cleanedArray = cleanedArray.filter(function (el) { return el != '--' });
+      cleanedArray = cleanedArray.filter(function (el) { return el != '' });
+      cleanedArray = cleanedArray.filter(function (el) { return el != '\s' });
+
+
     });
     //console.log(phrase.match(/\b \b/));
   }
-  
-  cleanedArray = unique(cleanedArray);
-  console.log(cleanedArray);
-  const cambridgeDictionary = require('cambridge-dictionary');
-  
-  const arDef = [];
-  
-  for(let i = 0; i < cleanedArray.length; i+=1){
-    cambridgeDictionary.getExplanation(cleanedArray[i])
-    .then(.explanations)
-    .catch(console.error);
-    
-    //arDef[i] = new cambridgeDictionary.getExplanation(cleanedArray[i]);
-    //arDef[i] = arDef[i].explanations[i].explanations.senses;
-    //console.log(arDef[i]);
-    //.then(arDef[i])
-    //.catch(console.error);
-    /*let p = new cambridgeDictionary((resolve, reject) => {
-      resolve .getExplanation(cleanedArray[i]){
 
-      }
-      throw new Error("o_O");
-    })*/
+  cleanedArray = unique(cleanedArray);
+  const cambridgeDictionary = require('cambridge-dictionary');
+
+  for (let i = 1; i < 10/*cleanedArray.length*/; i += 1) {
+    cambridgeDictionary.getExplanation(cleanedArray[i])
+      .then(
+        res => {
+          const exp = res.explanations[0].senses[0].definations[0].text;
+          console.log(exp);
+          fs.writeFile('out.srt', exp, (fileStatus) =>{
+            //console.log(fileStatus);
+          })
+        }, 
+        error => {
+          console.log(error);
+        }
+      )
+      .catch(console.error);
+
   }
-   
+
 });
