@@ -26,8 +26,8 @@ let cleanedArray = [];
 fs.readFile(filename, 'utf8', function (err, data) {
   if (err) throw err;
   const parsedSubs = parse(data);
-
-
+  
+  
   for (let i = 0; i < parsedSubs.length; i += 1) {
     const phrase = parsedSubs[i].text;
     const arrayOfWords = phrase.split(/[' '|'\n']/i);
@@ -46,7 +46,7 @@ fs.readFile(filename, 'utf8', function (err, data) {
   cleanedArray = unique(cleanedArray);
   const cambridgeDictionary = require('cambridge-dictionary');
 
-  for (let i = 1; i < 10/*cleanedArray.length*/; i += 1) {
+  for (let i = 0; i < 10/*cleanedArray.length*/; i += 1) {
     cambridgeDictionary.getExplanation(cleanedArray[i])
       .then(
         res => {
