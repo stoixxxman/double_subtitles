@@ -22,23 +22,25 @@ if (process.argv.length < 3) {
 var fs = require('fs'), filename = process.argv[2];
 
 let cleanedArray = [];
-
+let parsedSubs = [];
+let phrase = [];
 fs.readFile(filename, 'utf8', function (err, data) {
   if (err) throw err;
-  const parsedSubs = parse(data);
+  parsedSubs = parse(data);
   
   
   for (let i = 0; i < parsedSubs.length; i += 1) {
-    const phrase = parsedSubs[i].text;
+    phrase = parsedSubs[i].text;
+    
     const arrayOfWords = phrase.split(/[' '|'\n']/i);
     arrayOfWords.forEach((el) => {
+      
       cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, '').toLowerCase());
       cleanedArray = cleanedArray.filter(function (el) { return el != '-' });
       cleanedArray = cleanedArray.filter(function (el) { return el != '--' });
       cleanedArray = cleanedArray.filter(function (el) { return el != '' });
       cleanedArray = cleanedArray.filter(function (el) { return el != '\s' });
-
-
+      
     });
     //console.log(phrase.match(/\b \b/));
   }
@@ -46,16 +48,25 @@ fs.readFile(filename, 'utf8', function (err, data) {
   cleanedArray = unique(cleanedArray);
   const cambridgeDictionary = require('cambridge-dictionary');
 
-  for (let i = 0; i < 10/*cleanedArray.length*/; i += 1) {
+  for (let i = 0; i < 5/*cleanedArray.length*/; i += 1) {
     cambridgeDictionary.getExplanation(cleanedArray[i])
       .then(
         res => {
-          const exp = res.explanations[0].senses[0].definations[0].text;
-          console.log(exp);
-          fs.writeFile('out.srt', exp, (fileStatus) =>{
-            //console.log(fileStatus);
-          })
+            let word = res.word;
+            let wordPos = res.explanations[0].pos;
+            let guideWord = res.explanations[0].senses[0].guideWord;
+            
+            let expText = res.explanations[0].senses[0].definations[0].text;
+            let wordExample = res.explanations[0].senses[0].definations[0].examples[0];
+            
+            fs.appendFileSync('out.srt', `${word}`);
+            fs.appendFileSync('out.srt', ` \(${guideWord}\)`);
+
+            fs.appendFileSync('out.srt', ` ${wordPos}`);
+            fs.appendFileSync('out.srt', `\n${expText}`);
+            fs.appendFileSync('out.srt', `\n${wordExample}\n`);
         }, 
+        
         error => {
           console.log(error);
         }
