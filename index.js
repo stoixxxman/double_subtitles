@@ -1,11 +1,11 @@
-const { parse } = require('subtitle');
+const { parse, stringify } = require('subtitle');
 const unique = require('unique-words');
 
 const msToTime = (duration) => {
-  var milliseconds = parseInt((duration % 1000) / 1),
-    seconds = parseInt((duration / 1000) % 60),
-    minutes = parseInt((duration / (1000 * 60)) % 60),
-    hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+  let milliseconds = parseInt((duration % 1000) / 1);
+  let seconds = parseInt((duration / 1000) % 60);
+  let minutes = parseInt((duration / (1000 * 60)) % 60);
+  let hours = parseInt((duration / (1000 * 60 * 60)) % 24);
 
   hours = (hours < 10) ? "0" + hours : hours;
   minutes = (minutes < 10) ? "0" + minutes : minutes;
@@ -20,7 +20,8 @@ const run = () => {
     process.exit(1);
   }
   // Read the file and print its contents.
-  var fs = require('fs'), filename = process.argv[2];
+  const fs = require('fs');
+  const filename = process.argv[2];
   
   let cleanedArray = [];
   let parsedSubs = [];
@@ -30,7 +31,6 @@ const run = () => {
   fs.readFile(filename, 'utf8', function (err, data) {
     if (err) throw err;
     parsedSubs = parse(data);
-  
   
   
     for (let i = 0; i < parsedSubs.length; i += 1) {
@@ -49,6 +49,8 @@ const run = () => {
       });
   
     }
+    console.log(cleanedArray);
+    return;
   
     cleanedArray = unique(cleanedArray);
   
