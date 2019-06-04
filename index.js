@@ -61,7 +61,6 @@ fs.readFile(filename, 'utf8', function (err, data) {
     let phrase = parsedSubs[i].text, index = 0;
 
     for (let j = 0; j < cleanedArray.length; j += 1) {
-      console.log(cleanedArray.length);
       cambridgeDictionary.getExplanation(cleanedArray[j])
         .then(
           res => {
