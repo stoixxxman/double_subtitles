@@ -45,7 +45,7 @@ const run = () => {
           
     
           //TODO: rewrite to [].map
-          arrayOfWords.map((el) => {
+          arrayOfWords.forEach((el) => {
             cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, '').toLowerCase());
             cleanedArray = cleanedArray.filter(function (el) { return el != '-' });
             cleanedArray = cleanedArray.filter(function (el) { return el != '--' });
