@@ -60,6 +60,11 @@ fs.readFile(filename, 'utf8', function (err, data) {
     let end = msToTime(parsedSubs[i].end);
     let phrase = parsedSubs[i].text, index = 0;
 
+    fs.appendFileSync('out.srt', `${i + 1}`);
+    fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
+    fs.appendFileSync('out.srt', `${end}\n`);
+    fs.appendFileSync('out.srt', `${phrase}\n\n`);
+
     for (let j = 0; j < cleanedArray.length; j += 1) {
       cambridgeDictionary.getExplanation(cleanedArray[j])
         .then(
@@ -71,11 +76,7 @@ fs.readFile(filename, 'utf8', function (err, data) {
             let expText = res.explanations[0].senses[0].definations[0].text;
             let wordExample = res.explanations[0].senses[0].definations[0].examples[0];
 
-            if (word.test(phrase) === true) {
-              fs.appendFileSync('out.srt', `${i + 1}`);
-              fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
-              fs.appendFileSync('out.srt', `${end}\n`);
-              fs.appendFileSync('out.srt', `${phrase}\n\n`);
+           // if (word.test(phrase) === true) {
 
               fs.appendFileSync('out.srt', `${word}`);
               fs.appendFileSync('out.srt', ` \(${guideWord}\)`);
@@ -83,7 +84,7 @@ fs.readFile(filename, 'utf8', function (err, data) {
               fs.appendFileSync('out.srt', ` ${wordPos}`);
               fs.appendFileSync('out.srt', `\n${expText}`);
               fs.appendFileSync('out.srt', `\n${wordExample}\n\n`);
-            }
+            //}
           },
 
           error => {
