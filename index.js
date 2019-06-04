@@ -1,5 +1,6 @@
 const { parse, stringify } = require('subtitle');
 const unique = require('unique-words');
+const cambridgeDictionary = require('cambridge-dictionary');
 
 const msToTime = (duration) => {
   let milliseconds = parseInt((duration % 1000) / 1);
@@ -31,72 +32,62 @@ const run = () => {
   fs.readFile(filename, 'utf8', function (err, data) {
     if (err) throw err;
     parsedSubs = parse(data);
-  
-  
-    for (let i = 0; i < parsedSubs.length; i += 1) {
-  
-      phrase = parsedSubs[i].text;
-      const arrayOfWords = phrase.split(/[' '|'\n']/i);
-  
-      arrayOfWords.forEach((el) => {
-        cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, '').toLowerCase());
-        cleanedArray = cleanedArray.filter(function (el) { return el != '-' });
-        cleanedArray = cleanedArray.filter(function (el) { return el != '--' });
-        cleanedArray = cleanedArray.filter(function (el) { return el != '' });
-        cleanedArray = cleanedArray.filter(function (el) { return el != '\s' });
-  
-  
-      });
-  
-    }
-    console.log(cleanedArray);
-    return;
-  
-    cleanedArray = unique(cleanedArray);
-  
-    const cambridgeDictionary = require('cambridge-dictionary');
-  
-    for (let i = 0; i < parsedSubs.length; i += 1) {
-      let start = msToTime(parsedSubs[i].start);
-      let end = msToTime(parsedSubs[i].end);
-      let phrase = parsedSubs[i].text, index = 0;
-  
-      fs.appendFileSync('out.srt', `${i + 1}`);
-      fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
-      fs.appendFileSync('out.srt', `${end}\n`);
-      fs.appendFileSync('out.srt', `${phrase}\n\n`);
-  
-      for (let j = 0; j < cleanedArray.length; j += 1) {
-        cambridgeDictionary.getExplanation(cleanedArray[j])
-          .then(
-            res => {
-              let word = ' ' + res.word + ' ';
-              let wordPos = res.explanations[0].pos;
-              let guideWord = res.explanations[0].senses[0].guideWord;
-              let level = res.explanations[0].senses[0].definations[0].level;
-              let expText = res.explanations[0].senses[0].definations[0].text;
-              let wordExample = res.explanations[0].senses[0].definations[0].examples[0];
-  
-             // if (word.test(phrase) === true) {
-  
-                fs.appendFileSync('out.srt', `${word}`);
-                fs.appendFileSync('out.srt', ` \(${guideWord}\)`);
-                fs.appendFileSync('out.srt', ` \<${level}\>`);
-                fs.appendFileSync('out.srt', ` ${wordPos}`);
-                fs.appendFileSync('out.srt', `\n${expText}`);
-                fs.appendFileSync('out.srt', `\n${wordExample}\n\n`);
-              //}
-            },
-  
-            error => {
-              console.log(error);
-            }
-          )
-          .catch(console.error);
+    console.log(parsedSubs);
+    (async () => {
+      try{
+
+        for await (sub of parsedSubs){
+          const phrase = sub.text;
+    
+          const arrExplWithWords = [];
+    
+          const arrayOfWords = phrase.split(/[' '|'\n']/i);
+          
+    
+          //TODO: rewrite to [].map
+          arrayOfWords.map((el) => {
+            cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, '').toLowerCase());
+            cleanedArray = cleanedArray.filter(function (el) { return el != '-' });
+            cleanedArray = cleanedArray.filter(function (el) { return el != '--' });
+            cleanedArray = cleanedArray.filter(function (el) { return el != '' });
+            cleanedArray = cleanedArray.filter(function (el) { return el != '\s' });
+          });
+          
+          
+          for await (word of cleanedArray){
+            cambridgeDictionary.getExplanation(word).then(
+              res => {
+                const wordC = ' ' + res.word + ' ';
+                  const wordPos = res.explanations[0].pos;
+                  const guideWord = res.explanations[0].senses[0].guideWord;
+                  const level = res.explanations[0].senses[0].definations[0].level;
+                  const expText = res.explanations[0].senses[0].definations[0].text;
+                  const wordExample = res.explanations[0].senses[0].definations[0].examples[0];
+    
+                const obj = {wordC, expText};
+                console.log(obj);
+                arrExplWithWords.push({word, expText});
+              },
+              err => {
+                arrExplWithWords.push({word, err});
+              }
+            )
+          }
+    
+          await console.log(arrExplWithWords);
+          return;
+          arrExplWithWords.forEach((expWithWord) => {
+    
+          })
+    
+    
+        }
+
+      }catch(e){
+        console.log(e.stack);
       }
-  
-    }
-  
+    })();
+   
   });
 
 }
