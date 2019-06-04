@@ -68,7 +68,6 @@ fs.readFile(filename, 'utf8', function (err, data) {
       cleanedArray = cleanedArray.filter(function (el) { return el != '--' });
       cleanedArray = cleanedArray.filter(function (el) { return el != '' });
       cleanedArray = cleanedArray.filter(function (el) { return el != '\s' });
-
       
     });
     
@@ -77,7 +76,6 @@ fs.readFile(filename, 'utf8', function (err, data) {
   }
   
   cleanedArray = unique(cleanedArray);
-  
   const cambridgeDictionary = require('cambridge-dictionary');
 
   for (let i = 0; i < parsedSubs.length; i += 1) {
@@ -85,25 +83,24 @@ fs.readFile(filename, 'utf8', function (err, data) {
     let end = msToTime(parsedSubs[i].end);
     let phrase = parsedSubs[i].text, index = 0;
     
-    for(let j = 0; j < cleanedArray.length; j+=1){
-      //console.log(cleanedArray[j]);
-      console.log(cleanedArray.length);
+    fs.appendFileSync('out.srt', `${i+1}`);
+    fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
+    fs.appendFileSync('out.srt', `${end}\n`);
+    fs.appendFileSync('out.srt', `${phrase}\n\n`);
+    for(let j = 0; j < cleanedArray; j+=1){
     cambridgeDictionary.getExplanation(cleanedArray[j])
       .then(
         res => {
-            let word = ' ' + res.word + ' ';
+            let word = res.word;
             let wordPos = res.explanations[0].pos;
             let guideWord = res.explanations[0].senses[0].guideWord;
             let level = res.explanations[0].senses[0].definations[0].level;
             let expText = res.explanations[0].senses[0].definations[0].text;
             let wordExample = res.explanations[0].senses[0].definations[0].examples[0];
-            
-            if(word.test(phrase) === true){
-              fs.appendFileSync('out.srt', `${i+1}`);
-              fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
-              fs.appendFileSync('out.srt', `${end}\n`);
-              fs.appendFileSync('out.srt', `${phrase}\n\n`);
 
+            const arrayOfWords = phrase.split(/[' '|'\n']/i);
+            //textSubs.splice(index, 0, word, wordPos, expText);
+            if(phrase.indexOf(word) !== -1){
               fs.appendFileSync('out.srt', `${word}`);
               fs.appendFileSync('out.srt', ` \(${guideWord}\)`);
               fs.appendFileSync('out.srt', ` \<${level}\>`);
