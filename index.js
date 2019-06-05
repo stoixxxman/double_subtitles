@@ -15,12 +15,12 @@ function msToTime(duration) {
 
 const { parse } = require('subtitle');
 const unique = require('unique-words');
-// Make sure we got a filename on the command line.
+
 if (process.argv.length < 3) {
   console.log('Usage: node ' + process.argv[1] + ' FILENAME');
   process.exit(1);
 }
-// Read the file and print its contents.
+
 var fs = require('fs'), filename = process.argv[2];
 
 let cleanedArray = [];
@@ -32,31 +32,33 @@ fs.readFile(filename, 'utf8', function (err, data) {
   if (err) throw err;
   parsedSubs = parse(data);
 
-
+  let wordsFromSub = [];
 
   for (let i = 0; i < parsedSubs.length; i += 1) {
 
     phrase = parsedSubs[i].text;
     const arrayOfWords = phrase.split(/[' '|'\n']/i);
-
-    arrayOfWords.forEach((el) => {
-      cleanedArray.push(el.replace(/[\,\.\/\!\<\?\>\"\♪]/gi, '').toLowerCase());
-      cleanedArray = cleanedArray.filter(function (el) { return el != '-' });
-      cleanedArray = cleanedArray.filter(function (el) { return el != '--' });
-      cleanedArray = cleanedArray.filter(function (el) { return el != '' });
-      cleanedArray = cleanedArray.filter(function (el) { return el != '\s' });
-
-
+    
+    wordsFromSub = arrayOfWords.map((el) => {
+      el = el.replace(/[\,\.\/\!\<\?\>\"\♪\-]/gi, '').toLowerCase();
+      if(el != '' & el != 's' & el != 'a' & el != 'i' & el != 'll' & el != 't' ){
+          return el;
+      };
     });
-
+    wordsFromSub = unique(wordsFromSub);
+    cleanedArray[i] = wordsFromSub;
   }
 
   cleanedArray = unique(cleanedArray);
-
+  console.log(cleanedArray);
+  
+  fs.writeFileSync('uniqueWords.txt', `${cleanedArray}`);
   const cambridgeDictionary = require('cambridge-dictionary');
 
-  for (let i = 0; i < parsedSubs.length; i += 1) {
+   for (let i = 0; i < cleanedArray.length; i += 1) {
+    fs.appendFileSync('uniqueWords.txt', `${cleanedArray[i]}\n`)
     let start = msToTime(parsedSubs[i].start);
+    //console.log(start);
     let end = msToTime(parsedSubs[i].end);
     let phrase = parsedSubs[i].text, index = 0;
 
@@ -69,7 +71,7 @@ fs.readFile(filename, 'utf8', function (err, data) {
       cambridgeDictionary.getExplanation(cleanedArray[j])
         .then(
           res => {
-            let word = ' ' + res.word + ' ';
+            let word =res.word;
             let wordPos = res.explanations[0].pos;
             let guideWord = res.explanations[0].senses[0].guideWord;
             let level = res.explanations[0].senses[0].definations[0].level;
@@ -94,6 +96,6 @@ fs.readFile(filename, 'utf8', function (err, data) {
         .catch(console.error);
     }
 
-  }
+   }
 
 });
