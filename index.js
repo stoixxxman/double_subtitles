@@ -51,7 +51,15 @@ fs.readFile(filename, 'utf8', function (err, data) {
 
   cleanedArray = unique(cleanedArray);
   console.log(cleanedArray);
-  
+
+  let sortCleanedArray = cleanedArray;
+  sortCleanedArray.sort(function(a, b){
+    // ASC  -> a.length - b.length
+    // DESC -> b.length - a.length
+    return b.length - a.length;
+  });
+
+  console.log(sortCleanedArray);
   fs.writeFileSync('uniqueWords.txt', `${cleanedArray}`);
   const cambridgeDictionary = require('cambridge-dictionary');
 
