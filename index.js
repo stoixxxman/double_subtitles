@@ -15,6 +15,7 @@ function msToTime(duration) {
 
 const { parse } = require('subtitle');
 const unique = require('unique-words');
+const ffmpeg = require('ffmpeg');
 
 if (process.argv.length < 3) {
   console.log('Usage: node ' + process.argv[1] + ' FILENAME');
@@ -50,21 +51,26 @@ fs.readFile(filename, 'utf8', function (err, data) {
   }
 
   cleanedArray = unique(cleanedArray);
-  console.log(cleanedArray);
-
   let sortCleanedArray = cleanedArray;
+  
   sortCleanedArray.sort(function(a, b){
     // ASC  -> a.length - b.length
     // DESC -> b.length - a.length
     return b.length - a.length;
   });
-
   console.log(sortCleanedArray);
-  fs.writeFileSync('uniqueWords.txt', `${cleanedArray}`);
+  // sortCleanedArray.length
+
+  for (let i = 0; i < sortCleanedArray.length; i += 1) {
+    fs.appendFileSync('sortCleanedArray.txt', `${sortCleanedArray[i]} `);
+    fs.appendFileSync('mylist.txt', `file '${sortCleanedArray[i]}.wav' \n`);
+    fs.appendFileSync('mylist.txt', `file '${sortCleanedArray[i]}_s.wav' \n`);
+  }
+  
   const cambridgeDictionary = require('cambridge-dictionary');
 
    for (let i = 0; i < cleanedArray.length; i += 1) {
-    fs.appendFileSync('uniqueWords.txt', `${cleanedArray[i]}\n`)
+    //fs.appendFileSync('uniqueWords.txt', `${cleanedArray[i]}\n`)
     let start = msToTime(parsedSubs[i].start);
     //console.log(start);
     let end = msToTime(parsedSubs[i].end);
