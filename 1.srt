@@ -1,10 +1,237 @@
 ﻿1
-00:00:05,000 --> 00:00:08,200
-Computer programming is the process of telling a computer to do certain things by giving it instructions. These instructions are called programs. A person who writes instructions is a computer programmer. The instructions come in different languages; they are called programming languages. Many programming languages exist. Sometimes programmers use special software, such as integrated development environments (IDEs), which have many features, including a text editor, to help them to type and edit programs.
+00:00:00,000 --> 00:00:03,200
+Look at that.
+Another new coffee shop.
 
 2
-00:00:08,210 --> 00:00:09,910
-Computers themselves understand instructions directly when those instructions are written in machine code, special sequences of characters that are able to be processed by the computer but are difficult to read by humans. Writing these instructions directly in machine code is tedious and difficult, so instructions are written in a language easier for people to use, which the computer converts into "computer form" instructions (in other words, machine code) so the computer can follow them. The simplest of these are assembly language. Programs written in a language more like English is converted by a compiler. Some languages, called interpreted languages, use interpreters instead of assemblers or compilers.
+00:00:03,210 --> 00:00:04,910
+- You see that?
+- Totally. Yeah.
 
+3
+00:00:04,910 --> 00:00:06,840
+- What's that one called?
+- Foam Party.
 
+4
+00:00:06,840 --> 00:00:09,580
+"Foam Party"? Come on.
+
+5
+00:00:09,580 --> 00:00:11,950
+And everyone is just linin' up.
+You see that?
+
+6
+00:00:11,950 --> 00:00:13,110
+I see it.
+
+7
+00:00:13,120 --> 00:00:14,620
+Is that a coffee shop
+or a disco?
+
+8
+00:00:14,620 --> 00:00:16,320
+Dad, you're old, man.
+
+9
+00:00:16,320 --> 00:00:18,120
+<i>There are multiple reports</i>
+
+10
+00:00:18,120 --> 00:00:20,020
+<i>of another mysterious
+seismic event last night.</i>
+
+11
+00:00:20,020 --> 00:00:21,990
+<i>Sources close to Spider-Man say
+he's looking into the problem.</i>
+
+12
+00:00:21,990 --> 00:00:25,460
+Spider-Man. I mean,
+this guy swings in once a day,
+
+13
+00:00:25,460 --> 00:00:27,900
+zip-zap-zop in his little mask
+and answers to no one. Right?
+
+14
+00:00:27,900 --> 00:00:29,060
+Yeah, Dad. Yeah.
+
+15
+00:00:29,070 --> 00:00:30,570
+Meanwhile,
+my guys are out there,
+
+16
+00:00:30,570 --> 00:00:33,000
+- lives on the line, no masks.
+- Uh-huh.
+
+17
+00:00:33,000 --> 00:00:35,970
+- We show our faces.
+- Speed up. I know these kids.
+
+18
+00:00:35,970 --> 00:00:37,970
+With great ability
+comes great accountability.
+
+19
+00:00:37,980 --> 00:00:39,570
+That's not even
+how the saying goes.
+
+20
+00:00:39,580 --> 00:00:42,110
+I do like his cereal, though.
+I'll give him that.
+
+21
+00:00:42,110 --> 00:00:44,380
+Oh, my gosh.
+Don't cops run red lights?
+
+22
+00:00:44,380 --> 00:00:46,210
+Oh, yeah, some do.
+But not your dad.
+
+23
+00:00:47,520 --> 00:00:50,220
+<i>♪ My memories keep begging ♪</i>
+
+24
+00:00:50,220 --> 00:00:52,450
+<i>♪ For someone else ♪</i>
+
+25
+00:00:52,460 --> 00:00:58,160
+<i>♪ I know this feeling, yes
+I know it very well ♪</i>
+
+26
+00:00:58,160 --> 00:01:00,230
+Why can't I go back
+to Brooklyn Middle?
+
+27
+00:01:00,230 --> 00:01:01,630
+You've given it
+two weeks.
+
+28
+00:01:01,630 --> 00:01:03,400
+We're not having
+this conversation.
+
+29
+00:01:03,400 --> 00:01:05,600
+I just think that
+this new school is elitist.
+
+30
+00:01:05,600 --> 00:01:07,200
+- "Elitist"?
+- And I would prefer to be
+
+31
+00:01:07,200 --> 00:01:09,000
+at a normal school
+among the people.
+
+32
+00:01:09,010 --> 00:01:10,940
+"The people"?
+These are your people.
+
+33
+00:01:10,940 --> 00:01:13,380
+I'm only here 'cause
+I won that stupid lottery.
+
+34
+00:01:13,380 --> 00:01:16,110
+No way. You passed the entry
+test just like everybody else.
+
+35
+00:01:16,110 --> 00:01:18,680
+You have an opportunity here.
+You wanna blow that?
+
+36
+00:01:18,680 --> 00:01:20,380
+You wanna end up
+like your uncle?
+
+37
+00:01:20,380 --> 00:01:23,450
+What's wrong with Uncle Aaron?
+He's a good guy.
+
+38
+00:01:23,450 --> 00:01:25,020
+We all make choices in life.
+
+39
+00:01:25,020 --> 00:01:26,550
+It doesn't feel
+like I have a choice right now.
+
+40
+00:01:26,560 --> 00:01:27,990
+You don't!
+
+41
+00:01:41,200 --> 00:01:42,570
+I love you, Miles.
+
+42
+00:01:42,570 --> 00:01:45,480
+Yeah, I know, Dad.
+See you Friday.
+
+43
+00:01:49,280 --> 00:01:52,210
+- You gotta say "I love you" back.
+- Dad, are you serious?
+
+44
+00:01:52,210 --> 00:01:53,350
+I wanna hear it.
+"I love you, Dad."
+
+45
+00:01:53,350 --> 00:01:55,020
+You wanna hear me
+say it?
+
+46
+00:01:55,020 --> 00:01:56,380
+You're dropping me off
+at a school.
+
+47
+00:01:56,390 --> 00:01:57,580
+- "I love you, Dad."
+- Look at this place.
+
+48
+00:01:57,590 --> 00:01:58,590
+"Dad, I love you."
+
+49
+00:02:00,560 --> 00:02:03,330
+Dad, I love you.
+
+50
+00:02:03,330 --> 00:02:04,550
+That's a copy.
 
