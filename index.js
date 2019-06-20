@@ -15,6 +15,7 @@ const msToTime = (duration) => {
   return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
 }
 
+
 const ffmpeg = require('ffmpeg');
 
 if (process.argv.length < 3) {
@@ -79,8 +80,12 @@ fs.readFile(filename, 'utf8', function (err, data) {
           console.log("no dir ",startPath);
           return;
       }
-  
+
+      // const mp3Duration = require('mp3-duration');
+      var audioconcat = require('audioconcat')
+
       let files=fs.readdirSync(startPath);
+      //console.log(files.length);
       for(let i=0;i<files.length;i++){
           let filename=path.join(startPath,files[i]);
           let stat = fs.lstatSync(filename);
@@ -88,13 +93,38 @@ fs.readFile(filename, 'utf8', function (err, data) {
               fromDir(filename,filter); //recurse
           }
           else if (filename.indexOf(filter)>=0) {
-            fs.appendFileSync('mp3list.txt', `file ${filename}\n`  )
-            console.log('-- found: ',filename);
+            
+            lastSpace = filename.indexOf(' ');
+            fileRename = filename.substring(0, lastSpace) + '.mp3';
+            fs.renameSync(filename, fileRename );
+            mp3.push(fileRename);
+            //fs.appendFileSync('mp3list.txt', `file ${filename} `  );
+            console.log(fileRename);
+            // mp3Duration('out 123.mp3', function (err, duration) {
+            //   if (err) return console.log(err.message);
+            //   console.log('Your file is ' + duration + ' seconds long');
+            // });
           };
       };
   };
   
   fromDir('./','.mp3');
+
+  mp3.sort(function(a, b){
+    // ASC  -> a.length - b.length
+    // DESC -> b.length - a.length
+    return b.length - a.length;
+  });
+  
+  for(let i = 0; i < mp3.length; i+=1){
+    for( let t = 1; t < 3; t += 1 ){
+    fs.appendFileSync('mylistMP3.txt', `file '${mp3[i]}' \n`  );
+    fs.appendFileSync('mylistMP3.txt', `file 'silence3sec.mp3' \n`  );
+  }
+  }
+  
+  console.log(mp3);
+  
 
   // test it out on home directory 
   findFile(process.env.HOME);

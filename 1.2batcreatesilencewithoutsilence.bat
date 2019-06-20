@@ -1,11 +1,11 @@
 echo off
 ren *" "*.mp3 *" ".mp3
 
-setlocal enabledelayedexpansion
-for /f "delims=" %%a in ('dir /b /a-d') do (
-   set "line=%%~nxa"
-   ren "%%a" "!line: =!"
-)
+//setlocal enabledelayedexpansion
+//for /f "delims=" %%a in ('dir /b /a-d') do (
+ //  set "line=%%~nxa"
+  // ren "%%a" "!line: =!"
+//)
 
 for /r %%a in (*.mp3) do (
 ffmpeg -f lavfi -t 2 -i anullsrc=channel_layout=mono -i "%%a" -filter_complex "[1:a][0:a]concat=n=2:v=0:a=1" "%%~pa%%~na1.mp3"
