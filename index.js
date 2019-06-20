@@ -69,6 +69,36 @@ fs.readFile(filename, 'utf8', function (err, data) {
   
   const cambridgeDictionary = require('cambridge-dictionary');
 
+  var path = require('path');
+  let mp3 = [];
+  function fromDir(startPath,filter){
+  
+     // console.log('Starting from dir '+startPath+'/');
+  
+      if (!fs.existsSync(startPath)){
+          console.log("no dir ",startPath);
+          return;
+      }
+  
+      let files=fs.readdirSync(startPath);
+      for(let i=0;i<files.length;i++){
+          let filename=path.join(startPath,files[i]);
+          let stat = fs.lstatSync(filename);
+          if (stat.isDirectory()){
+              fromDir(filename,filter); //recurse
+          }
+          else if (filename.indexOf(filter)>=0) {
+            fs.appendFileSync('mp3list.txt', `file ${filename}\n`  )
+            console.log('-- found: ',filename);
+          };
+      };
+  };
+  
+  fromDir('./','.mp3');
+
+// test it out on home directory 
+findFile(process.env.HOME);
+console.log(jsFiles);
    for (let i = 0; i < cleanedArray.length; i += 1) {
     //fs.appendFileSync('uniqueWords.txt', `${cleanedArray[i]}\n`)
     let start = msToTime(parsedSubs[i].start);

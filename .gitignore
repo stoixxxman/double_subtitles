@@ -2,6 +2,7 @@ node_modules
 pronunciation
 pronunciation-finder
 sourse
+get_words_from_website.js
 
 *.png
 *.wav
@@ -12,3 +13,4 @@ sourse
 *.sfk
 *.srt
 *.txt
+*.mp3

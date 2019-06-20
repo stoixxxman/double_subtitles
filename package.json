@@ -8,6 +8,7 @@
     "batjs": "^1.3.12",
     "cambridge-dictionary": "^0.1.1",
     "ffmpeg": "0.0.4",
+    "jquery": "^3.4.1",
     "subtitle": "^2.0.3",
     "unique-words": "^2.0.1"
   },
