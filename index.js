@@ -1,9 +1,12 @@
+const { parse, stringify } = require('subtitle');
+const unique = require('unique-words');
+const cambridgeDictionary = require('cambridge-dictionary');
 
-function msToTime(duration) {
-  var milliseconds = parseInt((duration % 1000) / 1),
-    seconds = parseInt((duration / 1000) % 60),
-    minutes = parseInt((duration / (1000 * 60)) % 60),
-    hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+const msToTime = (duration) => {
+  let milliseconds = parseInt((duration % 1000) / 1);
+  let seconds = parseInt((duration / 1000) % 60);
+  let minutes = parseInt((duration / (1000 * 60)) % 60);
+  let hours = parseInt((duration / (1000 * 60 * 60)) % 24);
 
   hours = (hours < 10) ? "0" + hours : hours;
   minutes = (minutes < 10) ? "0" + minutes : minutes;
@@ -12,9 +15,6 @@ function msToTime(duration) {
   return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
 }
 
-
-const { parse } = require('subtitle');
-const unique = require('unique-words');
 const ffmpeg = require('ffmpeg');
 
 if (process.argv.length < 3) {
@@ -96,50 +96,46 @@ fs.readFile(filename, 'utf8', function (err, data) {
   
   fromDir('./','.mp3');
 
-// test it out on home directory 
-findFile(process.env.HOME);
-console.log(jsFiles);
-   for (let i = 0; i < cleanedArray.length; i += 1) {
-    //fs.appendFileSync('uniqueWords.txt', `${cleanedArray[i]}\n`)
-    let start = msToTime(parsedSubs[i].start);
-    //console.log(start);
-    let end = msToTime(parsedSubs[i].end);
-    let phrase = parsedSubs[i].text, index = 0;
+  // test it out on home directory 
+  findFile(process.env.HOME);
+  console.log(jsFiles);
+   
+})
 
-    fs.appendFileSync('out.srt', `${i + 1}`);
-    fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
-    fs.appendFileSync('out.srt', `${end}\n`);
-    fs.appendFileSync('out.srt', `${phrase}\n\n`);
+// for (let i = 0; i < cleanedArray.length; i += 1) {
+//     //fs.appendFileSync('uniqueWords.txt', `${cleanedArray[i]}\n`)
+//     let start = msToTime(parsedSubs[i].start);
+//     //console.log(start);
+//     let end = msToTime(parsedSubs[i].end);
+//     let phrase = parsedSubs[i].text, index = 0;
 
-    for (let j = 0; j < cleanedArray.length; j += 1) {
-      cambridgeDictionary.getExplanation(cleanedArray[j])
-        .then(
-          res => {
-            let word =res.word;
-            let wordPos = res.explanations[0].pos;
-            let guideWord = res.explanations[0].senses[0].guideWord;
-            let level = res.explanations[0].senses[0].definations[0].level;
-            let expText = res.explanations[0].senses[0].definations[0].text;
-            let wordExample = res.explanations[0].senses[0].definations[0].examples[0];
+//     fs.appendFileSync('out.srt', `${i + 1}`);
+//     fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
+//     fs.appendFileSync('out.srt', `${end}\n`);
+//     fs.appendFileSync('out.srt', `${phrase}\n\n`);
 
-           // if (word.test(phrase) === true) {
+//     for (let j = 0; j < cleanedArray.length; j += 1) {
+//       cambridgeDictionary.getExplanation(cleanedArray[j])
+//         .then(
+//           res => {
+//             let word =res.word;
+//             let wordPos = res.explanations[0].pos;
+//             let guideWord = res.explanations[0].senses[0].guideWord;
+//             let level = res.explanations[0].senses[0].definations[0].level;
+//             let expText = res.explanations[0].senses[0].definations[0].text;
+//             let wordExample = res.explanations[0].senses[0].definations[0].examples[0];
 
-              fs.appendFileSync('out.srt', `${word}`);
-              fs.appendFileSync('out.srt', ` \(${guideWord}\)`);
-              fs.appendFileSync('out.srt', ` \<${level}\>`);
-              fs.appendFileSync('out.srt', ` ${wordPos}`);
-              fs.appendFileSync('out.srt', `\n${expText}`);
-              fs.appendFileSync('out.srt', `\n${wordExample}\n\n`);
-            //}
-          },
+//            // if (word.test(phrase) === true) {
 
-          error => {
-            console.log(error);
-          }
-        )
-        .catch(console.error);
-    }
+//               fs.appendFileSync('out.srt', `${word}`);
+//               fs.appendFileSync('out.srt', ` \(${guideWord}\)`);
+//               fs.appendFileSync('out.srt', ` \<${level}\>`);
+//               fs.appendFileSync('out.srt', ` ${wordPos}`);
+//               fs.appendFileSync('out.srt', `\n${expText}`);
+//               fs.appendFileSync('out.srt', `\n${wordExample}\n\n`);
+//             //}
+//           },
 
-   }
-
-});
+//           error => {
+//             console.log(error);
+//           }

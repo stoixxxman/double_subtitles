@@ -1,1463 +1,237 @@
-1
-00:00:12,580 --> 00:00:15,276
-Chris Anderson: So Robert
-spent the last few years
+﻿1
+00:00:05,000 --> 00:00:08,200
+Look at that.
+Another new coffee shop.
 
 2
-00:00:15,300 --> 00:00:17,636
-think about how weird human behavior is,
+00:00:08,210 --> 00:00:09,910
+- You see that?
+- Totally. Yeah.
 
 3
-00:00:17,660 --> 00:00:21,876
-and how inadequate most
-of our language trying to explain it is.
+00:00:09,910 --> 00:00:11,840
+- What's that one called?
+- Foam Party.
 
 4
-00:00:21,900 --> 00:00:26,276
-And it's very exciting to hear him
-explain some of the thinking behind it
+00:00:11,840 --> 00:00:14,580
+"Foam Party"? Come on.
 
 5
-00:00:26,300 --> 00:00:27,956
-in public for the first time.
+00:00:14,580 --> 00:00:16,950
+And everyone is just linin' up.
+You see that?
 
 6
-00:00:27,980 --> 00:00:30,076
-Over to you now, Robert Sapolsky.
+00:00:16,950 --> 00:00:18,110
+I see it.
 
 7
-00:00:30,100 --> 00:00:33,060
-(Applause)
+00:00:18,120 --> 00:00:19,620
+Is that a coffee shop
+or a disco?
 
 8
-00:00:34,860 --> 00:00:36,476
-Robert Sapolsky: Thank you.
+00:00:19,620 --> 00:00:21,320
+Dad, you're old, man.
 
 9
-00:00:36,500 --> 00:00:38,980
-The fantasy always runs
-something like this.
+00:00:21,320 --> 00:00:23,120
+<i>There are multiple reports</i>
 
 10
-00:00:39,780 --> 00:00:41,956
-I've overpowered his elite guard,
+00:00:23,120 --> 00:00:25,020
+<i>of another mysterious
+seismic event last night.</i>
 
 11
-00:00:41,980 --> 00:00:43,915
-burst into his secret bunker
+00:00:25,020 --> 00:00:26,990
+<i>Sources close to Spider-Man say
+he's looking into the problem.</i>
 
 12
-00:00:43,939 --> 00:00:45,756
-with my machine gun ready.
+00:00:26,990 --> 00:00:30,460
+Spider-Man. I mean,
+this guy swings in once a day,
 
 13
-00:00:45,780 --> 00:00:47,676
-He lunges for his Luger.
+00:00:30,460 --> 00:00:32,900
+zip-zap-zop in his little mask
+and answers to no one. Right?
 
 14
-00:00:47,700 --> 00:00:49,516
-I knock it out of his hand.
+00:00:32,900 --> 00:00:34,060
+Yeah, Dad. Yeah.
 
 15
-00:00:49,540 --> 00:00:51,876
-He lunges for his cyanide pill.
+00:00:34,070 --> 00:00:35,570
+Meanwhile,
+my guys are out there,
 
 16
-00:00:51,900 --> 00:00:53,636
-I knock that out of his hand.
+00:00:35,570 --> 00:00:38,000
+- lives on the line, no masks.
+- Uh-huh.
 
 17
-00:00:53,660 --> 00:00:54,956
-He snarls,
+00:00:38,000 --> 00:00:40,970
+- We show our faces.
+- Speed up. I know these kids.
 
 18
-00:00:54,980 --> 00:00:57,196
-comes at me with otherworldly strength.
+00:00:40,970 --> 00:00:42,970
+With great ability
+comes great accountability.
 
 19
-00:00:57,220 --> 00:00:58,916
-We grapple, we fight,
+00:00:42,980 --> 00:00:44,570
+That's not even
+how the saying goes.
 
 20
-00:00:58,940 --> 00:01:00,836
-I manage to pin him down
+00:00:44,580 --> 00:00:47,110
+I do like his cereal, though.
+I'll give him that.
 
 21
-00:01:00,860 --> 00:01:02,420
-and put on handcuffs.
+00:00:47,110 --> 00:00:49,380
+Oh, my gosh.
+Don't cops run red lights?
 
 22
-00:01:03,300 --> 00:01:05,316
-"Adolf Hitler," I say,
+00:00:49,380 --> 00:00:51,210
+Oh, yeah, some do.
+But not your dad.
 
 23
-00:01:05,340 --> 00:01:08,180
-"I arrest you for crimes
-against humanity."
+00:00:52,520 --> 00:00:55,220
+<i>♪ My memories keep begging ♪</i>
 
 24
-00:01:09,820 --> 00:01:12,796
-Here's where the Medal of Honor
-version of the fantasy ends
+00:00:55,220 --> 00:00:57,450
+<i>♪ For someone else ♪</i>
 
 25
-00:01:12,820 --> 00:01:14,676
-and the imagery darkens.
+00:00:57,460 --> 00:01:03,160
+<i>♪ I know this feeling, yes
+I know it very well ♪</i>
 
 26
-00:01:14,700 --> 00:01:16,419
-What would I do if I had Hitler?
+00:01:03,160 --> 00:01:05,230
+Why can't I go back
+to Brooklyn Middle?
 
 27
-00:01:16,980 --> 00:01:19,740
-It's not hard to imagine
-once I allow myself.
+00:01:05,230 --> 00:01:06,630
+You've given it
+two weeks.
 
 28
-00:01:20,540 --> 00:01:22,676
-Sever his spine at the neck.
+00:01:06,630 --> 00:01:08,400
+We're not having
+this conversation.
 
 29
-00:01:22,700 --> 00:01:25,076
-Take out his eyes with a blunt instrument.
+00:01:08,400 --> 00:01:10,600
+I just think that
+this new school is elitist.
 
 30
-00:01:25,100 --> 00:01:27,876
-Puncture his eardrums. Cut out his tongue.
+00:01:10,600 --> 00:01:12,200
+- "Elitist"?
+- And I would prefer to be
 
 31
-00:01:27,900 --> 00:01:30,036
-Leave him alive on a respirator,
+00:01:12,200 --> 00:01:14,000
+at a normal school
+among the people.
 
 32
-00:01:30,060 --> 00:01:35,356
-tube-fed, not able to speak
-or move or see or hear, just to feel,
+00:01:14,010 --> 00:01:15,940
+"The people"?
+These are your people.
 
 33
-00:01:35,380 --> 00:01:38,636
-and then inject him
-with something cancerous
+00:01:15,940 --> 00:01:18,380
+I'm only here 'cause
+I won that stupid lottery.
 
 34
-00:01:38,660 --> 00:01:40,916
-that's going to fester and pustulate
+00:01:18,380 --> 00:01:21,110
+No way. You passed the entry
+test just like everybody else.
 
 35
-00:01:40,940 --> 00:01:44,876
-until every cell in his body
-is screaming in agony,
+00:01:21,110 --> 00:01:23,680
+You have an opportunity here.
+You wanna blow that?
 
 36
-00:01:44,900 --> 00:01:48,140
-until every second
-feels like an eternity in hell.
+00:01:23,680 --> 00:01:25,380
+You wanna end up
+like your uncle?
 
 37
-00:01:49,500 --> 00:01:51,340
-That's what I would do to Hitler.
+00:01:25,380 --> 00:01:28,450
+What's wrong with Uncle Aaron?
+He's a good guy.
 
 38
-00:01:53,740 --> 00:01:55,756
-I've had this fantasy since I was a kid,
+00:01:28,450 --> 00:01:30,020
+We all make choices in life.
 
 39
-00:01:55,780 --> 00:01:57,276
-still do sometimes,
+00:01:30,020 --> 00:01:31,550
+It doesn't feel
+like I have a choice right now.
 
 40
-00:01:57,300 --> 00:01:59,956
-and when I do, my heart speeds up --
+00:01:31,560 --> 00:01:32,990
+You don't!
 
 41
-00:01:59,980 --> 00:02:04,860
-all these plans for the most evil,
-wicked soul in history.
+00:01:46,200 --> 00:01:47,570
+I love you, Miles.
 
 42
-00:02:05,660 --> 00:02:06,916
-But there's a problem,
+00:01:47,570 --> 00:01:50,480
+Yeah, I know, Dad.
+See you Friday.
 
 43
-00:02:06,940 --> 00:02:09,836
-which is I don't actually believe
-in souls or evil,
+00:01:54,280 --> 00:01:57,210
+- You gotta say "I love you" back.
+- Dad, are you serious?
 
 44
-00:02:09,860 --> 00:02:12,396
-and I think wicked belongs in a musical.
+00:01:57,210 --> 00:01:58,350
+I wanna hear it.
+"I love you, Dad."
 
 45
-00:02:12,420 --> 00:02:14,836
-But there's some people
-I would like to see killed,
+00:01:58,350 --> 00:02:00,020
+You wanna hear me
+say it?
 
 46
-00:02:14,860 --> 00:02:16,676
-but I'm against the death penalty.
+00:02:00,020 --> 00:02:01,380
+You're dropping me off
+at a school.
 
 47
-00:02:16,700 --> 00:02:18,796
-But I like schlocky violent movies,
+00:02:01,390 --> 00:02:02,580
+- "I love you, Dad."
+- Look at this place.
 
 48
-00:02:18,820 --> 00:02:20,596
-but I'm for strict gun control.
+00:02:02,590 --> 00:02:03,590
+"Dad, I love you."
 
 49
-00:02:20,620 --> 00:02:23,676
-But then there was a time
-I was at a laser tag place,
+00:02:05,560 --> 00:02:08,330
+Dad, I love you.
 
 50
-00:02:23,700 --> 00:02:27,580
-and I had such a good time
-hiding in a corner shooting at people.
-
-51
-00:02:28,180 --> 00:02:32,980
-In other words, I'm your basic
-confused human when it comes to violence.
-
-52
-00:02:33,580 --> 00:02:36,916
-Now, as a species, we obviously
-have problems with violence.
-
-53
-00:02:36,940 --> 00:02:39,996
-We use shower heads to deliver poison gas,
-
-54
-00:02:40,020 --> 00:02:43,116
-letters with anthrax,
-airplanes as weapons,
-
-55
-00:02:43,140 --> 00:02:44,996
-mass rape as a military strategy.
-
-56
-00:02:45,020 --> 00:02:47,300
-We're a miserably violent species.
-
-57
-00:02:47,740 --> 00:02:49,236
-But there's a complication,
-
-58
-00:02:49,260 --> 00:02:51,636
-which is we don't hate violence,
-
-59
-00:02:51,660 --> 00:02:53,516
-we hate the wrong kind.
-
-60
-00:02:53,540 --> 00:02:54,996
-And when it's the right kind,
-
-61
-00:02:55,020 --> 00:02:57,516
-we cheer it on, we hand out medals,
-
-62
-00:02:57,540 --> 00:03:00,676
-we vote for, we mate with
-our champions of it.
-
-63
-00:03:00,700 --> 00:03:02,516
-When it's the right kind of violence,
-
-64
-00:03:02,540 --> 00:03:03,740
-we love it.
-
-65
-00:03:04,340 --> 00:03:05,996
-And there's another complication,
-
-66
-00:03:06,020 --> 00:03:10,076
-which is, in addition to us
-being this miserably violent species,
-
-67
-00:03:10,100 --> 00:03:13,900
-we're also this extraordinarily
-altruistic, compassionate one.
-
-68
-00:03:15,340 --> 00:03:18,636
-So how do you make sense
-of the biology of our best behaviors,
-
-69
-00:03:18,660 --> 00:03:22,676
-our worst ones and all of those
-ambiguously in between?
-
-70
-00:03:22,700 --> 00:03:23,956
-Now, for starters,
-
-71
-00:03:23,980 --> 00:03:28,276
-what's totally boring is understanding
-the motoric aspects of the behavior.
-
-72
-00:03:28,300 --> 00:03:31,476
-Your brain tells your spine,
-tells your muscles
-
-73
-00:03:31,500 --> 00:03:32,756
-to do something or other,
-
-74
-00:03:32,780 --> 00:03:34,716
-and hooray, you've behaved.
-
-75
-00:03:34,740 --> 00:03:38,396
-What's hard is understanding
-the meaning of the behavior,
-
-76
-00:03:38,420 --> 00:03:42,236
-because in some settings,
-pulling a trigger is an appalling act;
-
-77
-00:03:42,260 --> 00:03:45,236
-in others, it's heroically
-self-sacrificial.
-
-78
-00:03:45,260 --> 00:03:48,196
-In some settings, putting your hand
-one someone else's
-
-79
-00:03:48,220 --> 00:03:49,676
-is deeply compassionate.
-
-80
-00:03:49,700 --> 00:03:51,596
-In others, it's a deep betrayal.
-
-81
-00:03:51,620 --> 00:03:53,156
-The challenge is to understand
-
-82
-00:03:53,180 --> 00:03:56,436
-the biology of the context
-of our behaviors,
-
-83
-00:03:56,460 --> 00:03:58,060
-and that's real tough.
-
-84
-00:03:58,860 --> 00:04:02,036
-One thing that's clear, though,
-is you're not going to get anywhere
-
-85
-00:04:02,060 --> 00:04:06,476
-if you think there's going to be
-the brain region or the hormone
-
-86
-00:04:06,500 --> 00:04:09,236
-or the gene or the childhood experience
-
-87
-00:04:09,260 --> 00:04:12,340
-or the evolutionary mechanism
-that explains everything.
-
-88
-00:04:12,860 --> 00:04:17,980
-Instead, every bit of behavior
-has multiple levels of causality.
-
-89
-00:04:18,620 --> 00:04:20,020
-Let's look at an example.
-
-90
-00:04:20,660 --> 00:04:21,860
-You have a gun.
-
-91
-00:04:22,540 --> 00:04:24,116
-There's a crisis going on:
-
-92
-00:04:24,140 --> 00:04:26,716
-rioting, violence, people running around.
-
-93
-00:04:26,740 --> 00:04:29,916
-A stranger is running at you
-in an agitated state --
-
-94
-00:04:29,940 --> 00:04:35,036
-you can't quite tell if the expression
-is frightened, threatening, angry --
-
-95
-00:04:35,060 --> 00:04:38,276
-holding something
-that kind of looks like a handgun.
-
-96
-00:04:38,300 --> 00:04:39,516
-You're not sure.
-
-97
-00:04:39,540 --> 00:04:41,436
-The stranger comes running at you
-
-98
-00:04:41,460 --> 00:04:43,196
-and you pull the trigger.
-
-99
-00:04:43,220 --> 00:04:46,156
-And it turns out
-that thing in this person's hand
-
-100
-00:04:46,180 --> 00:04:47,380
-was a cell phone.
-
-101
-00:04:48,020 --> 00:04:50,236
-So we asked this biological question:
-
-102
-00:04:50,260 --> 00:04:53,436
-what was going on
-that caused this behavior?
-
-103
-00:04:53,460 --> 00:04:55,356
-What caused this behavior?
-
-104
-00:04:55,380 --> 00:04:57,676
-And this is a multitude of questions.
-
-105
-00:04:57,700 --> 00:04:58,916
-We start.
-
-106
-00:04:58,940 --> 00:05:03,356
-What was going on in your brain
-one second before you pulled that trigger?
-
-107
-00:05:03,380 --> 00:05:07,076
-And this brings us into the realm
-of a brain region called the amygdala.
-
-108
-00:05:07,100 --> 00:05:11,036
-The amygdala, which is
-central to violence, central to fear,
-
-109
-00:05:11,060 --> 00:05:13,756
-initiates volleys of cascades
-
-110
-00:05:13,780 --> 00:05:16,036
-that produce pulling of a trigger.
-
-111
-00:05:16,060 --> 00:05:19,740
-What was the level of activity
-in your amygdala one second before?
-
-112
-00:05:20,700 --> 00:05:24,076
-But to understand that,
-we have to step back a little bit.
-
-113
-00:05:24,100 --> 00:05:27,676
-What was going on in the environment
-seconds to minutes before
-
-114
-00:05:27,700 --> 00:05:29,436
-that impacted the amygdala?
-
-115
-00:05:29,460 --> 00:05:32,556
-Now, obviously, the sights,
-the sounds of the rioting,
-
-116
-00:05:32,580 --> 00:05:33,796
-that was pertinent.
-
-117
-00:05:33,820 --> 00:05:35,036
-But in addition,
-
-118
-00:05:35,060 --> 00:05:38,516
-you're more likely to mistake
-a cell phone for a handgun
-
-119
-00:05:38,540 --> 00:05:40,796
-if that stranger was male
-
-120
-00:05:40,820 --> 00:05:43,420
-and large and of a different race.
-
-121
-00:05:44,180 --> 00:05:46,316
-Furthermore, if you're in pain,
-
-122
-00:05:46,340 --> 00:05:48,516
-if you're hungry, if you're exhausted,
-
-123
-00:05:48,540 --> 00:05:51,076
-your frontal cortex
-is not going to work as well,
-
-124
-00:05:51,100 --> 00:05:54,756
-part of the brain whose job it is
-to get to the amygdala in time
-
-125
-00:05:54,780 --> 00:05:58,060
-saying, "Are you really sure
-that's a gun there?"
-
-126
-00:05:58,620 --> 00:06:00,756
-But we need to step further back.
-
-127
-00:06:00,780 --> 00:06:03,956
-Now we have to look
-at hours to days before,
-
-128
-00:06:03,980 --> 00:06:06,956
-and with this, we have entered
-the realm of hormones.
-
-129
-00:06:06,980 --> 00:06:09,116
-For example, testosterone,
-
-130
-00:06:09,140 --> 00:06:10,876
-where regardless of your sex,
-
-131
-00:06:10,900 --> 00:06:13,756
-if you have elevated
-testosterone levels in your blood,
-
-132
-00:06:13,780 --> 00:06:17,156
-you're more likely to think
-a face with a neutral expression
-
-133
-00:06:17,180 --> 00:06:19,236
-is instead looking threatening.
-
-134
-00:06:19,260 --> 00:06:23,116
-Elevated testosterone levels,
-elevated levels of stress hormones,
-
-135
-00:06:23,140 --> 00:06:25,436
-and your amygdala
-is going to be more active
-
-136
-00:06:25,460 --> 00:06:27,940
-and your frontal cortex
-will be more sluggish.
-
-137
-00:06:29,020 --> 00:06:31,876
-Pushing back further,
-weeks to months before,
-
-138
-00:06:31,900 --> 00:06:33,356
-where's the relevance there?
-
-139
-00:06:33,380 --> 00:06:35,916
-This is the realm of neural plasticity,
-
-140
-00:06:35,940 --> 00:06:39,876
-the fact that your brain
-can change in response to experience,
-
-141
-00:06:39,900 --> 00:06:44,076
-and if your previous months
-have been filled with stress and trauma,
-
-142
-00:06:44,100 --> 00:06:45,956
-your amygdala will have enlarged.
-
-143
-00:06:45,980 --> 00:06:48,196
-The neurons will have become
-more excitable,
-
-144
-00:06:48,220 --> 00:06:50,556
-your frontal cortex would have atrophied,
-
-145
-00:06:50,580 --> 00:06:53,380
-all relevant to what happens
-in that one second.
-
-146
-00:06:54,140 --> 00:06:56,796
-But we push back even more, back years,
-
-147
-00:06:56,820 --> 00:06:59,316
-back, for example, to your adolescence.
-
-148
-00:06:59,340 --> 00:07:01,836
-Now, the central fact
-of the adolescent brain
-
-149
-00:07:01,860 --> 00:07:04,596
-is all of it is going full blast
-
-150
-00:07:04,620 --> 00:07:06,316
-except the frontal cortex,
-
-151
-00:07:06,340 --> 00:07:08,076
-which is still half-baked.
-
-152
-00:07:08,100 --> 00:07:11,276
-It doesn't fully mature
-until you're around 25.
-
-153
-00:07:11,300 --> 00:07:14,516
-And thus, adolescence and early adulthood
-
-154
-00:07:14,540 --> 00:07:19,676
-are the years where environment
-and experience sculpt your frontal cortex
-
-155
-00:07:19,700 --> 00:07:23,500
-into the version you're going to have
-as an adult in that critical moment.
-
-156
-00:07:24,620 --> 00:07:26,396
-But pushing back even further,
-
-157
-00:07:26,420 --> 00:07:29,876
-even further back
-to childhood and fetal life
-
-158
-00:07:29,900 --> 00:07:32,716
-and all the different versions
-that that could come in.
-
-159
-00:07:32,740 --> 00:07:35,996
-Now, obviously, that's the time
-that your brain is being constructed,
-
-160
-00:07:36,020 --> 00:07:37,236
-and that's important,
-
-161
-00:07:37,260 --> 00:07:40,556
-but in addition,
-experience during those times
-
-162
-00:07:40,580 --> 00:07:43,556
-produce what are called
-epigenetic changes,
-
-163
-00:07:43,580 --> 00:07:45,236
-permanent, in some cases,
-
-164
-00:07:45,260 --> 00:07:49,596
-permanently activating
-certain genes, turning off others.
-
-165
-00:07:49,620 --> 00:07:51,116
-And as an example of this,
-
-166
-00:07:51,140 --> 00:07:56,156
-if as a fetus you were exposed to a lot
-of stress hormones through your mother,
-
-167
-00:07:56,180 --> 00:07:59,596
-epigenetics is going to produce
-your amygdala in adulthood
-
-168
-00:07:59,620 --> 00:08:01,556
-as a more excitable form,
-
-169
-00:08:01,580 --> 00:08:04,220
-and you're going to have
-elevated stress hormone levels.
-
-170
-00:08:04,780 --> 00:08:06,676
-But pushing even further back,
-
-171
-00:08:06,700 --> 00:08:08,396
-back to when you were just a fetus,
-
-172
-00:08:08,420 --> 00:08:11,236
-back to when all you were
-was a collection of genes.
-
-173
-00:08:11,260 --> 00:08:13,636
-Now, genes are really
-important to all of this,
-
-174
-00:08:13,660 --> 00:08:16,396
-but critically, genes don't
-determine anything,
-
-175
-00:08:16,420 --> 00:08:20,060
-because genes work differently
-in different environments.
-
-176
-00:08:20,460 --> 00:08:21,716
-Key example here:
-
-177
-00:08:21,740 --> 00:08:24,876
-there's a variant of a gene called MAO-A,
-
-178
-00:08:24,900 --> 00:08:26,556
-and if you have that variant,
-
-179
-00:08:26,580 --> 00:08:31,236
-you are far more likely
-to commit antisocial violence
-
-180
-00:08:31,260 --> 00:08:35,236
-if, and only if,
-you were abused as a child.
-
-181
-00:08:35,260 --> 00:08:37,636
-Genes and environment interact,
-
-182
-00:08:37,659 --> 00:08:41,275
-and what's happening in that one second
-before you pull that trigger
-
-183
-00:08:41,299 --> 00:08:45,540
-reflects your lifetime
-of those gene-environment interactions.
-
-184
-00:08:46,499 --> 00:08:50,116
-Now, remarkably enough,
-we've got to push even further back now,
-
-185
-00:08:50,140 --> 00:08:51,516
-back centuries.
-
-186
-00:08:51,540 --> 00:08:53,876
-What were your ancestors up to.
-
-187
-00:08:53,900 --> 00:08:57,076
-And if, for example,
-they were nomadic pastoralists,
-
-188
-00:08:57,100 --> 00:08:58,356
-they were pastoralists,
-
-189
-00:08:58,380 --> 00:09:00,956
-people living in deserts or grasslands
-
-190
-00:09:00,980 --> 00:09:03,636
-with their herds of camels, cows, goats,
-
-191
-00:09:03,660 --> 00:09:07,716
-odds are they would have invented
-what's called a culture of honor
-
-192
-00:09:07,740 --> 00:09:09,956
-filled with warrior classes,
-
-193
-00:09:09,980 --> 00:09:12,676
-retributive violence, clan vendettas,
-
-194
-00:09:12,700 --> 00:09:14,956
-and amazingly, centuries later,
-
-195
-00:09:14,980 --> 00:09:18,660
-that would still be influencing
-the values with which you were raised.
-
-196
-00:09:19,620 --> 00:09:21,756
-But we've got to push even further back,
-
-197
-00:09:21,780 --> 00:09:23,516
-back millions of years,
-
-198
-00:09:23,540 --> 00:09:25,596
-because if we're talking about genes,
-
-199
-00:09:25,620 --> 00:09:29,276
-implicitly we're now talking
-about the evolution of genes.
-
-200
-00:09:29,300 --> 00:09:31,516
-And what you see is, for example,
-
-201
-00:09:31,540 --> 00:09:34,036
-patterns across different primate species.
-
-202
-00:09:34,060 --> 00:09:38,476
-Some of them have evolved
-for extremely low levels of aggression,
-
-203
-00:09:38,500 --> 00:09:41,036
-others have evolved
-in the opposite direction,
-
-204
-00:09:41,060 --> 00:09:44,956
-and floating there in between
-by every measure are humans,
-
-205
-00:09:44,980 --> 00:09:48,876
-once again this confused,
-barely defined species
-
-206
-00:09:48,900 --> 00:09:52,140
-that has all these potentials
-to go one way or the other.
-
-207
-00:09:53,380 --> 00:09:55,196
-So what has this gotten us to?
-
-208
-00:09:55,220 --> 00:09:57,196
-Basically, what we're seeing here is,
-
-209
-00:09:57,220 --> 00:09:59,116
-if you want to understand a behavior,
-
-210
-00:09:59,140 --> 00:10:01,996
-whether it's an appalling one,
-a wondrous one,
-
-211
-00:10:02,020 --> 00:10:03,756
-or confusedly in between,
-
-212
-00:10:03,780 --> 00:10:05,316
-if you want to understand that,
-
-213
-00:10:05,340 --> 00:10:08,796
-you've got take into account
-what happened a second before
-
-214
-00:10:08,820 --> 00:10:10,276
-to a million years before,
-
-215
-00:10:10,300 --> 00:10:11,956
-everything in between.
-
-216
-00:10:11,980 --> 00:10:13,956
-So what can we conclude at this point?
-
-217
-00:10:13,980 --> 00:10:16,276
-Officially, it's complicated.
-
-218
-00:10:16,300 --> 00:10:17,916
-Wow, that's really helpful.
-
-219
-00:10:17,940 --> 00:10:19,196
-It's complicated,
-
-220
-00:10:19,220 --> 00:10:22,796
-and you'd better be
-real careful, real cautious
-
-221
-00:10:22,820 --> 00:10:26,156
-before you conclude
-you know what causes a behavior,
-
-222
-00:10:26,180 --> 00:10:28,940
-especially if it's a behavior
-you're judging harshly.
-
-223
-00:10:30,420 --> 00:10:34,396
-Now, to me, the single most important
-point about all of this
-
-224
-00:10:34,420 --> 00:10:36,796
-is one having to do with change.
-
-225
-00:10:36,820 --> 00:10:43,196
-Every bit of biology I have mentioned here
-can change in different circumstances.
-
-226
-00:10:43,220 --> 00:10:46,036
-For example, ecosystems change.
-
-227
-00:10:46,060 --> 00:10:50,476
-Thousands of years ago,
-the Sahara was a lush grassland.
-
-228
-00:10:50,500 --> 00:10:52,116
-Cultures change.
-
-229
-00:10:52,140 --> 00:10:56,476
-In the 17th century, the most terrifying
-people in Europe were the Swedes,
-
-230
-00:10:56,500 --> 00:10:58,236
-rampaging all over the place.
-
-231
-00:10:58,260 --> 00:11:00,436
-This is what the Swedish
-military does now.
-
-232
-00:11:00,460 --> 00:11:02,300
-They haven't had a war in 200 years.
-
-233
-00:11:03,100 --> 00:11:04,556
-Most importantly,
-
-234
-00:11:04,580 --> 00:11:06,196
-brains change.
-
-235
-00:11:06,220 --> 00:11:08,236
-Neurons grow new processes.
-
-236
-00:11:08,260 --> 00:11:09,716
-Circuits disconnect.
-
-237
-00:11:09,740 --> 00:11:11,396
-Everything in the brain changes,
-
-238
-00:11:11,420 --> 00:11:16,620
-and out of this come extraordinary
-examples of human change.
-
-239
-00:11:17,220 --> 00:11:18,836
-First one:
-
-240
-00:11:18,860 --> 00:11:20,556
-this is a man named John Newton,
-
-241
-00:11:20,580 --> 00:11:21,916
-a British theologian
-
-242
-00:11:21,940 --> 00:11:26,676
-who played a central role in the abolition
-of slavery from the British Empire
-
-243
-00:11:26,700 --> 00:11:28,716
-in the early 1800s.
-
-244
-00:11:28,740 --> 00:11:33,476
-And amazingly, this man
-spent decades as a younger man
-
-245
-00:11:33,500 --> 00:11:35,636
-as the captain of a slave ship,
-
-246
-00:11:35,660 --> 00:11:38,596
-and then as an investor in slavery,
-
-247
-00:11:38,620 --> 00:11:40,756
-growing rich from this.
-
-248
-00:11:40,780 --> 00:11:43,436
-And then something changed.
-
-249
-00:11:43,460 --> 00:11:44,996
-Something changed in him,
-
-250
-00:11:45,020 --> 00:11:50,276
-something that Newton himself celebrated
-in the thing that he's most famous for,
-
-251
-00:11:50,300 --> 00:11:51,916
-a hymn that he wrote:
-
-252
-00:11:51,940 --> 00:11:53,340
-"Amazing Grace."
-
-253
-00:11:54,860 --> 00:11:59,756
-This is a man named Zenji Abe
-on the morning of December 6, 1941,
-
-254
-00:11:59,780 --> 00:12:04,756
-about to lead a squadron of Japanese
-bombers to attack Pearl Harbor.
-
-255
-00:12:04,780 --> 00:12:08,316
-And this is the same man
-50 years later to the day
-
-256
-00:12:08,340 --> 00:12:11,916
-hugging a man who survived
-the attack on the ground.
-
-257
-00:12:11,940 --> 00:12:13,356
-And as an old man,
-
-258
-00:12:13,380 --> 00:12:17,796
-Zenji Abe came to a collection
-of Pearl Harbor survivors
-
-259
-00:12:17,820 --> 00:12:19,236
-at a ceremony there
-
-260
-00:12:19,260 --> 00:12:23,580
-and in halting English apologized
-for what he had done as a young man.
-
-261
-00:12:24,580 --> 00:12:26,476
-Now, it doesn't always require decades.
-
-262
-00:12:26,500 --> 00:12:30,196
-Sometimes, extraordinary change
-could happen in just hours.
-
-263
-00:12:30,220 --> 00:12:34,596
-Consider the World War I
-Christmas truce of 1914.
-
-264
-00:12:34,620 --> 00:12:37,756
-The powers that be
-had negotiated a brief truce
-
-265
-00:12:37,780 --> 00:12:39,396
-so that soldiers could go out,
-
-266
-00:12:39,420 --> 00:12:43,316
-collect bodies from no-man's-land
-in between the trench lines.
-
-267
-00:12:43,340 --> 00:12:46,276
-And soon British and German soldiers
-
-268
-00:12:46,300 --> 00:12:47,756
-were doing that,
-
-269
-00:12:47,780 --> 00:12:50,236
-and then helping each other carry bodies,
-
-270
-00:12:50,260 --> 00:12:53,916
-and then helping each other
-dig graves in the frozen ground,
-
-271
-00:12:53,940 --> 00:12:55,196
-and then praying together,
-
-272
-00:12:55,220 --> 00:12:58,036
-and then having Christmas together
-and exchanging gifts,
-
-273
-00:12:58,060 --> 00:13:01,276
-and by the next day,
-they were playing soccer together
-
-274
-00:13:01,300 --> 00:13:04,676
-and exchanging addresses
-so they could meet after the war.
-
-275
-00:13:04,700 --> 00:13:08,676
-That truce kept going
-until the officers had to arrive
-
-276
-00:13:08,700 --> 00:13:10,196
-and said, "We will shoot you
-
-277
-00:13:10,220 --> 00:13:12,716
-unless you go back
-to trying to kill each other."
-
-278
-00:13:12,740 --> 00:13:14,876
-And all it took here was hours
-
-279
-00:13:14,900 --> 00:13:19,236
-for these men to develop
-a completely new category of "us,"
-
-280
-00:13:19,260 --> 00:13:21,156
-all of us in the trenches here
-
-281
-00:13:21,180 --> 00:13:23,956
-on both sides, dying for no damn reason,
-
-282
-00:13:23,980 --> 00:13:27,636
-and who is a "them,"
-those faceless powers behind the lines
-
-283
-00:13:27,660 --> 00:13:29,260
-who were using them as pawns.
-
-284
-00:13:30,500 --> 00:13:33,700
-And sometimes,
-change can occur in seconds.
-
-285
-00:13:34,540 --> 00:13:37,876
-Probably the most horrifying event
-in the Vietnam War
-
-286
-00:13:37,900 --> 00:13:39,796
-was the My Lai Massacre.
-
-287
-00:13:39,820 --> 00:13:41,836
-A brigade of American soldiers
-
-288
-00:13:41,860 --> 00:13:44,876
-went into an undefended
-village full of civilians
-
-289
-00:13:44,900 --> 00:13:48,436
-and killed between 350 and 500 of them,
-
-290
-00:13:48,460 --> 00:13:51,316
-mass-raped women and children,
-
-291
-00:13:51,340 --> 00:13:52,916
-mutilated bodies.
-
-292
-00:13:52,940 --> 00:13:54,156
-It was appalling.
-
-293
-00:13:54,180 --> 00:13:58,436
-It was appalling because it occurred,
-because the government denied it,
-
-294
-00:13:58,460 --> 00:14:02,836
-because the US government eventually
-did nothing more than a slap on the wrist,
-
-295
-00:14:02,860 --> 00:14:07,116
-and appalling because it almost certainly
-was not a singular event.
-
-296
-00:14:07,140 --> 00:14:12,236
-This man, Hugh Thompson, this is the man
-who stopped the My Lai Massacre.
-
-297
-00:14:12,260 --> 00:14:14,876
-He was piloting a helicopter gunship,
-
-298
-00:14:14,900 --> 00:14:16,716
-landed there, got out
-
-299
-00:14:16,740 --> 00:14:19,796
-and saw American soldiers shooting babies,
-
-300
-00:14:19,820 --> 00:14:21,196
-shooting old women,
-
-301
-00:14:21,220 --> 00:14:23,116
-figured out what was going on,
-
-302
-00:14:23,140 --> 00:14:25,236
-and he then took his helicopter
-
-303
-00:14:25,260 --> 00:14:29,236
-and did something that undid
-his lifetime of conditioning
-
-304
-00:14:29,260 --> 00:14:31,316
-as to who is an "us" and who is a "them."
-
-305
-00:14:31,340 --> 00:14:33,196
-He landed his helicopter
-
-306
-00:14:33,220 --> 00:14:36,836
-in between some surviving villagers
-and American soldiers
-
-307
-00:14:36,860 --> 00:14:40,516
-and he trained his machine guns
-on his fellow Americans,
-
-308
-00:14:40,540 --> 00:14:44,420
-and said, "If you don't stop the killing,
-I will mow you down."
-
-309
-00:14:46,380 --> 00:14:49,356
-Now, these people
-are no more special than any of us.
-
-310
-00:14:49,380 --> 00:14:51,956
-Same neurons, same neurochemicals,
-
-311
-00:14:51,980 --> 00:14:53,300
-same biology.
-
-312
-00:14:54,220 --> 00:14:57,596
-What we're left with here
-is this inevitable cliche:
-
-313
-00:14:57,620 --> 00:15:00,356
-"Those who don't study history
-are destined to repeat it."
-
-314
-00:15:00,380 --> 00:15:02,556
-What we have here is the opposite of it.
-
-315
-00:15:02,580 --> 00:15:06,836
-Those who don't study the history
-of extraordinary human change,
-
-316
-00:15:06,860 --> 00:15:10,396
-those who don't study the biology
-of what can transform us
-
-317
-00:15:10,420 --> 00:15:12,916
-from our worst to our best behaviors,
-
-318
-00:15:12,940 --> 00:15:15,996
-those who don't do this
-are destined not to be able
-
-319
-00:15:16,020 --> 00:15:19,900
-to repeat these incandescent,
-magnificent moments.
-
-320
-00:15:20,300 --> 00:15:21,500
-So thank you.
-
-321
-00:15:21,860 --> 00:15:25,940
-(Applause)
-
-322
-00:15:31,860 --> 00:15:35,356
-CA: Talks that really give you
-a new mental model about something,
-
-323
-00:15:35,380 --> 00:15:37,316
-those are some of my favorite TED Talks,
-
-324
-00:15:37,340 --> 00:15:39,060
-and we just got one.
-
-325
-00:15:39,780 --> 00:15:42,636
-Robert, thank you so much for that.
-Good luck with the book.
-
-326
-00:15:42,660 --> 00:15:43,916
-That was amazing,
-
-327
-00:15:43,940 --> 00:15:47,116
-and we're going to try and get you
-to come here in person one year.
-
-328
-00:15:47,140 --> 00:15:48,356
-Thank you so much.
-
-329
-00:15:48,380 --> 00:00:00,000
-RS: Thank you. Thank you all.
+00:02:08,330 --> 00:02:09,550
+That's a copy.
 
