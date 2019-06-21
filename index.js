@@ -11,8 +11,10 @@ const msToTime = (duration) => {
   hours = (hours < 10) ? "0" + hours : hours;
   minutes = (minutes < 10) ? "0" + minutes : minutes;
   seconds = (seconds < 10) ? "0" + seconds : seconds;
+  //milliseconds = (milliseconds < 10) ? "00" + milliseconds : milliseconds;
+  
 
-  return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+  return hours + ":" + minutes + ":" + seconds + "," + milliseconds;
 }
 
 
@@ -59,7 +61,7 @@ fs.readFile(filename, 'utf8', function (err, data) {
     // DESC -> b.length - a.length
     return b.length - a.length;
   });
-  console.log(sortCleanedArray);
+  //console.log(sortCleanedArray);
   // sortCleanedArray.length
 
   for (let i = 0; i < sortCleanedArray.length; i += 1) {
@@ -68,10 +70,10 @@ fs.readFile(filename, 'utf8', function (err, data) {
     fs.appendFileSync('mylist.txt', `file '${sortCleanedArray[i]}_s.wav' \n`);
   }
   
-  const cambridgeDictionary = require('cambridge-dictionary');
 
   var path = require('path');
   let mp3 = [];
+  let wordsMp3 = [];
   function fromDir(startPath,filter){
   
      // console.log('Starting from dir '+startPath+'/');
@@ -82,11 +84,13 @@ fs.readFile(filename, 'utf8', function (err, data) {
       }
 
       // const mp3Duration = require('mp3-duration');
-      var audioconcat = require('audioconcat')
+      //var audioconcat = require('audioconcat');
+      //const getMP3Duration = require('get-mp3-duration');
 
       let files=fs.readdirSync(startPath);
+      
       //console.log(files.length);
-      for(let i=0;i<files.length;i++){
+      for(let i=0, timing = 0;i<files.length;i++){
           let filename=path.join(startPath,files[i]);
           let stat = fs.lstatSync(filename);
           if (stat.isDirectory()){
@@ -96,14 +100,12 @@ fs.readFile(filename, 'utf8', function (err, data) {
             
             lastSpace = filename.indexOf(' ');
             fileRename = filename.substring(0, lastSpace) + '.mp3';
+            let word = filename.substring(0, lastSpace);
+            wordsMp3.push(word);
             fs.renameSync(filename, fileRename );
+            
             mp3.push(fileRename);
-            //fs.appendFileSync('mp3list.txt', `file ${filename} `  );
-            console.log(fileRename);
-            // mp3Duration('out 123.mp3', function (err, duration) {
-            //   if (err) return console.log(err.message);
-            //   console.log('Your file is ' + duration + ' seconds long');
-            // });
+            
           };
       };
   };
@@ -115,57 +117,94 @@ fs.readFile(filename, 'utf8', function (err, data) {
     // DESC -> b.length - a.length
     return b.length - a.length;
   });
-  
-  for(let i = 0; i < mp3.length; i+=1){
-    for( let t = 1; t < 3; t += 1 ){
-    fs.appendFileSync('mylistMP3.txt', `file '${mp3[i]}' \n`  );
-    fs.appendFileSync('mylistMP3.txt', `file 'silence3sec.mp3' \n`  );
-  }
-  }
-  
-  console.log(mp3);
-  
 
-  // test it out on home directory 
-  findFile(process.env.HOME);
-  console.log(jsFiles);
-   
+  wordsMp3.sort(function(a, b){
+    // ASC  -> a.length - b.length
+    // DESC -> b.length - a.length
+    return b.length - a.length;
+  });
+  console.log(mp3.length);
+  console.log(wordsMp3.lenght);
+  console.log(mp3, wordsMp3);
+
+  for(let i = 0, timeStart = 0, timeEnd = 3000; i < wordsMp3.length; i+=1, timeStart += 3000, timeEnd +=3000){
+    for( let t = 1; t < 3; t += 1 ){
+      fs.appendFileSync('mylistMP3.txt', `file '${mp3[i]}'  \n`  );
+      fs.appendFileSync('mylistMP3.txt', `file 'silence3sec.mp3' \n`  );
+    }      
+    
+    cambridgeDictionary.getExplanation(wordsMp3[i])
+              .then(
+                res => {
+                  let wordI = wordI + 1;
+                  let start = msToTime(timeStart);
+                  let end = msToTime(timeEnd);
+                  let phrase = parsedSubs[i].text, index = 0;
+
+                  let word = res.word;
+                  let wordPos = res.explanations[0].pos;
+                  let guideWord = res.explanations[0].senses[0].guideWord;
+                  let level = res.explanations[0].senses[0].definations[0].level;
+                  let expText = res.explanations[0].senses[0].definations[0].text;
+                  let wordExample = res.explanations[0].senses[0].definations[0].examples[0];
+                  console.log(word, wordPos, guideWord);
+                            
+                  fs.appendFileSync('out.srt', `${wordI}`);
+                  fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
+                  fs.appendFileSync('out.srt', `${end}\n`);
+
+                  fs.appendFileSync('out.srt', `${word}`);
+                  fs.appendFileSync('out.srt', ` \(${guideWord}\)`);
+                  fs.appendFileSync('out.srt', ` \<${level}\>`);
+                  fs.appendFileSync('out.srt', ` ${wordPos}`);
+                  fs.appendFileSync('out.srt', `\n${expText}`);
+                  fs.appendFileSync('out.srt', `\n${wordExample}\n\n`);
+                })
+              .catch(console.error);
+  }
 })
 
-// for (let i = 0; i < cleanedArray.length; i += 1) {
-//     //fs.appendFileSync('uniqueWords.txt', `${cleanedArray[i]}\n`)
-//     let start = msToTime(parsedSubs[i].start);
-//     //console.log(start);
-//     let end = msToTime(parsedSubs[i].end);
-//     let phrase = parsedSubs[i].text, index = 0;
 
-//     fs.appendFileSync('out.srt', `${i + 1}`);
-//     fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
-//     fs.appendFileSync('out.srt', `${end}\n`);
-//     fs.appendFileSync('out.srt', `${phrase}\n\n`);
 
-//     for (let j = 0; j < cleanedArray.length; j += 1) {
-//       cambridgeDictionary.getExplanation(cleanedArray[j])
-//         .then(
-//           res => {
-//             let word =res.word;
-//             let wordPos = res.explanations[0].pos;
-//             let guideWord = res.explanations[0].senses[0].guideWord;
-//             let level = res.explanations[0].senses[0].definations[0].level;
-//             let expText = res.explanations[0].senses[0].definations[0].text;
-//             let wordExample = res.explanations[0].senses[0].definations[0].examples[0];
+    //fs.appendFileSync('uniqueWords.txt', `${cleanedArray[i]}\n`)
+    // let start = msToTime(parsedSubs[i].start);
+    // //console.log(start);
+    // let end = msToTime(parsedSubs[i].end);
+    // let phrase = parsedSubs[i].text, index = 0;
+    // fs.appendFileSync('out.srt', `${i + 1}\n`);
+    // fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
+    // fs.appendFileSync('out.srt', `${end}\n`);
+    // fs.appendFileSync('out.srt', `${phrase}\n\n`);
 
-//            // if (word.test(phrase) === true) {
+    
+     
+      
+    
 
-//               fs.appendFileSync('out.srt', `${word}`);
-//               fs.appendFileSync('out.srt', ` \(${guideWord}\)`);
-//               fs.appendFileSync('out.srt', ` \<${level}\>`);
-//               fs.appendFileSync('out.srt', ` ${wordPos}`);
-//               fs.appendFileSync('out.srt', `\n${expText}`);
-//               fs.appendFileSync('out.srt', `\n${wordExample}\n\n`);
-//             //}
-//           },
+  
+//   console.log(mp3);
+  
 
-//           error => {
-//             console.log(error);
-//           }
+ 
+
+
+//   for (let i = 0; i < cleanedArray.length; i += 1) {
+      // //fs.appendFileSync('uniqueWords.txt', `${cleanedArray[i]}\n`)
+      // let start = msToTime(parsedSubs[i].start);
+      // //console.log(start);
+      // let end = msToTime(parsedSubs[i].end);
+      // let phrase = parsedSubs[i].text, index = 0;
+
+      // fs.appendFileSync('out.srt', `${i + 1}`);
+      // fs.appendFileSync('out.srt', `\n${start} \-\-\> `);
+      // fs.appendFileSync('out.srt', `${end}\n`);
+      // fs.appendFileSync('out.srt', `${phrase}\n\n`);
+
+      
+//         for (let j = 0; j < cleanedArray.length; j += 1) {
+            
+//         }
+// }
+// //           error => {
+// //             console.log(error);
+// //           }

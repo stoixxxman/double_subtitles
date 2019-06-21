@@ -9,6 +9,7 @@
     "batjs": "^1.3.12",
     "cambridge-dictionary": "^0.1.1",
     "ffmpeg": "0.0.4",
+    "get-mp3-duration": "^1.0.0",
     "jquery": "^3.4.1",
     "mp3-duration": "^1.1.0",
     "subtitle": "^2.0.3",
