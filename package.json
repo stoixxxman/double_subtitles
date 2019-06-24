@@ -11,9 +11,11 @@
     "ffmpeg": "0.0.4",
     "get-mp3-duration": "^1.0.0",
     "jquery": "^3.4.1",
+    "make-dir": "^3.0.0",
     "mp3-duration": "^1.1.0",
     "subtitle": "^2.0.3",
-    "unique-words": "^2.0.1"
+    "unique-words": "^2.0.1",
+    "utill": "^0.1.3"
   },
   "devDependencies": {},
   "scripts": {
