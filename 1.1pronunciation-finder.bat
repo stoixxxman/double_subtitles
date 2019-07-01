@@ -1,2 +1,1 @@
-pronunciation-finder accountability conversation opportunity mysterious spiderman meanwhile zipzapzop everybody dropping reportsi brooklyn memories everyone problemi 
-pause
+pronunciation-finder car map apple computer clas student
