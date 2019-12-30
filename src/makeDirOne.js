@@ -3,7 +3,8 @@ const makeDir = require('make-dir');
     const paths = await Promise.all([
         makeDir('sourse'),
         makeDir('sourse/txt'),
-        makeDir('sourse/srt')
+        makeDir('sourse/srt'),
+        makeDir('sourse/mp3')
     ]);
  
     //console.log(paths);

@@ -5,12 +5,12 @@ const textToSpeech = require('@google-cloud/text-to-speech');
 // Import other required libraries
 const fs = require('fs');
 const util = require('util');
-async function main() {
+async function main(phrase) {
   // Creates a client
   const client = new textToSpeech.TextToSpeechClient();
 
   // The text to synthesize
-  const text = 'Mother and Father';
+  const text = phrase;
 
   // Construct the request
   const request = {
@@ -25,7 +25,7 @@ async function main() {
   const [response] = await client.synthesizeSpeech(request);
   // Write the binary audio content to a local file
   const writeFile = util.promisify(fs.writeFile);
-  await writeFile('output.mp3', response.audioContent, 'binary');
-  console.log('Audio content written to file: output.mp3');
+  await writeFile(`${text}.mp3`, response.audioContent, 'binary');
+  console.log(`Audio content written to file: ${text}.mp3`);
 }
 main();
