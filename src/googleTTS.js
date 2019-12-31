@@ -35,4 +35,4 @@ async function mainStarter(phrase){
   }
 } 
 
-module.exports = mainStarter();
+module.exports = mainStarter;
