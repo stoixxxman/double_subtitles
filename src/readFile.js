@@ -47,6 +47,7 @@ if (process.argv.length < 3) {
   let phrase = [];
   let forOutCleanArray = [];
   let phraseArray = [];
+  fs.appendFileSync('./sourse/mp3/pronunciation-finder.bat', `pronunciation-finder `); 
   fs.readFile(filename, 'utf8', function (err, data) {
     if (err) throw err;
     parsedSubs = parse(data);
@@ -57,20 +58,23 @@ if (process.argv.length < 3) {
         phrase = phrase.replace(/<i>/gi, '').replace(/<\/i>/gi, '').replace(/\\n\'/gi, '').replace(/[^\w .]/gi, '');
         mainStarter(phrase);
         phraseArray[i] = phrase;
-        const arrayOfWords = phrase.split(/[' '|'\n'|.|!|?|,]/i);  
+        const arrayOfWords = phrase.split(/[' '|'\n'|.|!|?|,]/i); 
         wordsFromSub = arrayOfWords.map((el) => {
         el = el.replace(/[\,\.\/\!\<\?\>\"\♪\-]/gi, '').toLowerCase();
         if(el != '' & el != 's' & el != 'a' & el != 'i' & el != 'll' & el != 't' & arrEl.indexOf(el) == -1 ){
             console.log(el);
             arrEl.push(el);
+            mainStarter(el);
             fs.appendFileSync('./sourse/sortCleanedArray.txt', `${el} \n`);
-            fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file \"${el}.mp3\" \n`);
-            fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file \"silence3sec.mp3\" \n`);
-            fs.appendFileSync('./sourse/mp3/pronunciation-finder.bat', `pronunciation-finder ${el} \-\-dictionary oxford\n`);
+            fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file '${el}.mp3' \n`);
+            fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file \'silence3sec.mp3\' \n`);
+            fs.appendFileSync('./sourse/mp3/pronunciation-finder.bat', ` ${el} `);
             return el;
         };
         });
         fs.appendFileSync('./sourse/sortCleanedArray.txt', `${phrase} \n`);
+        fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file \'${phrase}.mp3\' \n`);
+        fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file \'silence3sec.mp3\' \n`);
         fs.appendFileSync('./sourse/sortCleanedArray.txt', `\n`);
         console.log(phrase);
         wordsFromSub = unique(wordsFromSub);
