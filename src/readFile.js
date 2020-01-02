@@ -2,6 +2,7 @@ const { parse, stringify } = require('subtitle');
 const unique = require('unique-words');
 var fs = require('fs'), filename = process.argv[2];
 const tts = require('./googleTTS.js');
+const callTts = require('./callTtsIfLengthSub.js');
 
 if (process.argv.length < 3) {
     console.log('Usage: node ' + process.argv[1] + ' FILENAME');
@@ -10,11 +11,10 @@ if (process.argv.length < 3) {
   
   let cleanedArray = [];
   let parsedSubs = [];
-  let phrase = [];
-  let forOutCleanArray = [];
-  let phraseArray = [];
-  fs.appendFileSync('./sourse/mp3/pronunciation-finder.bat', `pronunciation-finder `);
-  fs.appendFileSync('./sourse/mp3/trackWithSilence.bat', `ffmpeg \-f lavfi \-i aevalsrc=0:duration=2 \-ab 320k silence.mp3 \n`);
+  let sub = [];
+  
+  fs.appendFileSync('./sourse/mp3/startGlue.bat', `ffmpeg  -f concat -i glueAudioFFMPEG.bat -auto_convert 1 1output.m4a`);
+  
  
   fs.readFile(filename, 'utf8', function (err, data) {
     if (err) throw err;
@@ -22,12 +22,11 @@ if (process.argv.length < 3) {
     let wordsFromSub = []; 
     var arrEl = [];
     for (let i = 0; i < parsedSubs.length; i += 1) {
-        phrase = parsedSubs[i].text;
-        phrase = phrase.replace(/<i>/gi, '').replace(/<\/i>/gi, '').replace(/\\n\'/gi, ' ').replace(/[^\w ]/gi, '');
-        let contrlPhrase = phrase.replace(/ /gi,'_');
-        tts(phrase);
-        phraseArray[i] = phrase;
-        const arrayOfWords = phrase.split(/[' '|'\n'|.|!|?|,]/i); 
+        sub = parsedSubs[i].text;
+        sub = sub.replace(/<i>/gi, '').replace(/<\/i>/gi, '').replace(/\r?\n/g, ' ').replace(/\W/gm,' ').replace(/ {1,}/g,' ').replace(/^\s*/,'').replace(/\s*$/,'');
+       
+        const arrayOfWords = sub.split(/[' '|'\n'|.|!|?|,"]/i);
+        //console.log(arrayOfWords);
         wordsFromSub = arrayOfWords.map((el) => {
         el = el.replace(/[\,\.\/\!\<\?\>\"\♪\-]/gi, '').toLowerCase();
         if(el != '' & el != 's' & el != 'a' & el != 'i' & el != 'll' & el != 't' & arrEl.indexOf(el) == -1 ){
@@ -35,23 +34,24 @@ if (process.argv.length < 3) {
             arrEl.push(el);
             tts(el);
             fs.appendFileSync('./sourse/sortCleanedArray.txt', `${el} \n`);
-            fs.appendFileSync('./sourse/mp3/trackWithSilence.bat', `ffmpeg -i "${el}.mp3" -af "apad=pad_dur=2" ${el}_S.m4a \n`);
-            fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file "${el}_S.m4a" \n`);
-            //fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file \'silence3sec.mp3\' \n`);
-            fs.appendFileSync('./sourse/mp3/pronunciation-finder.bat', ` ${el} `);
+            fs.appendFileSync('./sourse/mp3/trackWithSilence.bat', `ffmpeg -i "${el}.mp3" -af "apad=pad_dur=2" ${el}.m4a \n`);
+            fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file ${el}.m4a \n`);
             return el;
         };
         });
-        fs.appendFileSync('./sourse/sortCleanedArray.txt', `${phrase} \n`);
-        fs.appendFileSync('./sourse/mp3/trackWithSilence.bat', `ffmpeg -i "${phrase}.mp3" -af "apad=pad_dur=4" "${contrlPhrase}_S.m4a" \n`);
-        fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file "${contrlPhrase}_S.m4a" \n`);
+        const lengthSub = sub.match(/\S+?\s|\S+?$/g).length;
+        callTts(lengthSub, arrayOfWords);
+        tts(sub);
+        const subWithoutMarks = sub.replace(/\W/gm,' ').replace(/^\s*/,'').replace(/\s*$/,'');
+        fs.appendFileSync('./sourse/sortCleanedArray.txt', `${subWithoutMarks} \n`);
+        fs.appendFileSync('./sourse/mp3/trackWithSilence.bat', `ffmpeg -i "${subWithoutMarks}.mp3" -af "apad=pad_dur=4" "${subWithoutMarks}.m4a" \n`);
+        fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file ${subWithoutMarks}.m4a \n`);
         fs.appendFileSync('./sourse/sortCleanedArray.txt', `\n`);
-        console.log(phrase);
+        console.log (sub);
         wordsFromSub = unique(wordsFromSub);
         cleanedArray[i] = wordsFromSub;
-        //console.log(wordsFromSub); 
     }
-  console.log(phraseArray.length) ; 
+  
   cleanedArray = unique(cleanedArray);
   let sortCleanedArray = cleanedArray;
   

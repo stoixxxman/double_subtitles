@@ -10,6 +10,7 @@ async function main(phrase) {
   const client = new textToSpeech.TextToSpeechClient();
   // The text to synthesize
   const text = phrase;
+  const textWithoutMarks = phrase.replace(/\W/gm,' ').replace(/^\s*/,'').replace(/\s*$/,'');
   // Construct the request
   const request = {
     input: {text: text},
@@ -22,8 +23,8 @@ async function main(phrase) {
   const [response] = await client.synthesizeSpeech(request);
   // Write the binary audio content to a local file
   const writeFile = util.promisify(fs.writeFile);
-  await writeFile(`sourse/mp3/${text}.mp3`, response.audioContent, 'binary');
-  console.log(`Audio content written to file: ${text}.mp3`);
+  await writeFile(`sourse/mp3/${textWithoutMarks}.mp3`, response.audioContent, 'binary');
+  console.log(`Audio content written to file: ${textWithoutMarks}.mp3`);
 }
 
 async function mainStarter(phrase){
