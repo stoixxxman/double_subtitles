@@ -1,18 +1,15 @@
-var fs = require('fs');
-const getMP3Duration = require('get-mp3-duration')
-const buffer = fs.readFileSync('sourse/ability.mp3')
-const duration = getMP3Duration(buffer)
- 
-console.log(duration, 'ms')
 
-for (let i = 0; i < 1; i++) {
-    phrase.push(el);
-    if(phrase.length = 2){
-      tts(phrase);
-      fs.appendFileSync('./sourse/sortCleanedArray.txt', `${phrase} \n`);
-      fs.appendFileSync('./sourse/mp3/trackWithSilence.bat', `ffmpeg -i "${phrase}.mp3" -af "apad=pad_dur=2" ${el}_S.m4a \n`);
-      fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.bat', `file "${phrase}_S.m4a" \n`);
-      phrase = [];
+    var array = data.toString().split("\n");
+    for(i in array) {
+        console.log(array[i]);
     }
-  }
-  str=str.replace(/^\s*/,'').replace(/\s*$/,'');
+
+    for (var i = 0; i < parseUserWords.length; i++) {
+      if (arr.indexOf(parseUserWords[i]) === -1) {
+        arr.push(parseUserWords[i]);
+      }
+    }
+    
+    if(el.substring(el.length - 1, el.length) == 's'){
+      elWithoutS = el.substring(0, el.length - 1);
+    };
