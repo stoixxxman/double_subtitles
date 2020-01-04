@@ -173,33 +173,34 @@ fs.readFile(filename, 'utf8', function (err, data) {
       })
       .catch((error) => console.log('Error', error));
   
-   function mp3Rename(a) {
-    let mp3 = [];
-    let wordsMp3 = [];
-    function fromDir(startPath,filter){
-      // console.log('Starting from dir '+startPath+'/');
-        if (!fs.existsSync(startPath)){
-            console.log("no dir ",startPath);
-            return;
-        }
-
-        
-        let files=fs.readdirSync(startPath);
-
-        for(let i=0, timing = 0;i<files.length;i++){
-            let filename=path.join(startPath,files[i]);
-            let stat = fs.lstatSync(filename);
-            if (stat.isDirectory()){
-                fromDir(filename,filter); //recurse
+      function mp3Rename(a) {
+        let mp3 = [];
+        let wordsMp3 = [];
+        function fromDir(startPath,filter){
+          // console.log('Starting from dir '+startPath+'/');
+            if (!fs.existsSync(startPath)){
+                console.log("no dir ",startPath);
+                return;
             }
-            else if (filename.indexOf(filter)>=0) {
-              const buffer = fs.readFileSync(filename);
-              const duration = getMP3Duration(buffer);
-              mp3.push({filename, duration});
+
+            
+            let files=fs.readdirSync(startPath);
+
+            for(let i=0, timing = 0;i<files.length;i++){
+                let filename=path.join(startPath,files[i]);
+                let stat = fs.lstatSync(filename);
+                if (stat.isDirectory()){
+                    fromDir(filename,filter); //recurse
+                }
+                else if (filename.indexOf(filter)>=0) {
+                  const buffer = fs.readFileSync(filename);
+                  const duration = getMP3Duration(buffer);
+                  mp3.push({filename, duration});
+                };
             };
         };
-    };
-    
+      
+
     fromDir('./sourse/','.mp3');
     
     mp3.sort(function(a, b){
@@ -207,7 +208,7 @@ fs.readFile(filename, 'utf8', function (err, data) {
       // DESC -> b.length - a.length
       return b.filename.length - a.filename.length;
     });
-    
+  }
     var util = require('util');
     let countErr = 0;
     //console.log(mp3);
