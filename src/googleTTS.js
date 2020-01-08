@@ -10,30 +10,26 @@ async function main(phrase) {
   const client = new textToSpeech.TextToSpeechClient();
   // The text to synthesize
   const text = phrase;
-  const textWithoutMarks = phrase.replace(/\W/gm,' ').replace(/^\s*/,'').replace(/\s*$/,'');
+  let textWithoutMarks = phrase.replace(/\W/gm, ' ').replace(/^\s*/, '').replace(/\s*$/, '');
+  if(textWithoutMarks.split(' ').length > 5){
+    let text =  textWithoutMarks.split('  ');
+    textWithoutMarks = text[0] + '...';
+  }
   // Construct the request
   const request = {
-    input: {text: text},
-    // Select the language and SSML Voice Gender (optional)
-    voice: {languageCode: 'en-US', ssmlGender: 'NEUTRAL'},
-    // Select the type of audio encoding
-    audioConfig: {audioEncoding: 'MP3'},
+    input: { text: text },
+    // StextWithoutMarksect the language and SSML Voice Gender (optional)
+    voice: { languageCode: 'en-US', ssmlGender: 'NEUTRAL' },
+    // StextWithoutMarksect the type of audio encoding
+    audioConfig: { audioEncoding: 'MP3' },
   };
   // Performs the Text-to-Speech request
   const [response] = await client.synthesizeSpeech(request);
   // Write the binary audio content to a local file
   const writeFile = util.promisify(fs.writeFile);
   await writeFile(`sourse/mp3/${textWithoutMarks}.mp3`, response.audioContent, 'binary');
+  
   console.log(`Audio content written to file: ${textWithoutMarks}.mp3`);
 }
 
-async function mainStarter(phrase){
-  try{
-    let oneSub = await main(phrase);
-    console.log(oneSub);
-  } catch(err){
-    console.log(err);
-  }
-} 
-
-module.exports = mainStarter;
+module.exports = main;
