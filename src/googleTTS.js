@@ -11,9 +11,18 @@ async function main(phrase) {
   // The text to synthesize
   const text = phrase;
   let textWithoutMarks = phrase.replace(/\W/gm, ' ').replace(/^\s*/, '').replace(/\s*$/, '');
-  if(textWithoutMarks.split(' ').length > 5){
-    let text =  textWithoutMarks.split('  ');
-    textWithoutMarks = text[0] + '...';
+  if (text.split(' ').length <= 1) {
+    fs.appendFileSync('./sourse/mp3/output/wholeText.txt', `${textWithoutMarks} \n`);
+    fs.appendFileSync('./sourse/mp3/newWords.txt', `file ${textWithoutMarks}.m4a \n`);
+    fs.appendFileSync('./sourse/mp3/trackWithSilence.bat', `ffmpeg -i "${textWithoutMarks}.mp3" -af "apad=pad_dur=2" ${textWithoutMarks}.m4a \n`);
+    fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.txt', `file ${textWithoutMarks}.m4a \n`);
+  } else if (textWithoutMarks.split(' ').length > 5) {
+    let text = textWithoutMarks.split(' ');
+    textWithoutMarks = text[0] + ' ' + text[1] + ' ' + text[3];
+    fs.appendFileSync('./sourse/mp3/output/wholeText.txt', `${textWithoutMarks} \n`);
+    fs.appendFileSync('./sourse/mp3/newWords.txt', `file ${textWithoutMarks}.m4a \n`);
+    fs.appendFileSync('./sourse/mp3/trackWithSilence.bat', `ffmpeg -i "${textWithoutMarks}.mp3" -af "apad=pad_dur=2" ${textWithoutMarks}.m4a \n`);
+    fs.appendFileSync('./sourse/mp3/glueAudioFFMPEG.txt', `file ${textWithoutMarks}.m4a \n`);
   }
   // Construct the request
   const request = {
@@ -28,7 +37,7 @@ async function main(phrase) {
   // Write the binary audio content to a local file
   const writeFile = util.promisify(fs.writeFile);
   await writeFile(`sourse/mp3/${textWithoutMarks}.mp3`, response.audioContent, 'binary');
-  
+
   console.log(`Audio content written to file: ${textWithoutMarks}.mp3`);
 }
 
