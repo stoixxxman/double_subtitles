@@ -3,6 +3,7 @@ const arrFrequency = require('./wordsFromSub.js');
 var fs = require('fs');
 const tts = require('./googleTTS.js');
 const nlp = require('compromise');
+nlp.extend(require('compromise-adjectives'));
 
 function fromSrt(parsedSubs, parseUserWords) {
     var arrWords = [];
@@ -21,6 +22,7 @@ function fromSrt(parsedSubs, parseUserWords) {
     wholeText = wholeText.replace(/[^a-zA-Z ?,.']/g, '');
     let arrSentence = [];
     let arrPhrase = wholeText.split(/[.,?!]/);
+
     arrPhrase = arrPhrase.map((phrase) => {
         phrase = phrase.replace(/^\s*/, '').replace(/\s*$/, '');
         arrWords = phrase.split(' ');
@@ -29,7 +31,7 @@ function fromSrt(parsedSubs, parseUserWords) {
             let iWord = nlp(arrWords[i]);
             iWord.verbs().toInfinitive();
             iWord.nouns().toSingular();
-            arrWords[i]= iWord.text();
+            arrWords[i]= iWord.text();    
             
             if (phrase.split(' ').length > 4) {
                 let middle = Math.floor(phrase.length / 2);
@@ -63,7 +65,7 @@ function fromSrt(parsedSubs, parseUserWords) {
 
     });
 
-    console.log(editText);
+    console.log(wholeText,'\n',editText);
     fs.appendFileSync('./sourse/wholeText.txt', `${editText}`);
     let frequ = arrFrequency.getFrequency2(allWords, 20);
     fs.appendFileSync('./sourse/mp3/output/frequWords.txt', frequ);
