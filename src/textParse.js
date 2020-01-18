@@ -5,6 +5,7 @@ const tts = require('./googleTTS.js');
 const nlp = require('compromise');
 nlp.extend(require('compromise-adjectives'));
 nlp.extend(require('compromise-ngrams'));
+nlp.extend(require('compromise-sentences'))
 
 function fromSrt(parsedSubs, parseUserWords) {
     var arrWords = [];
@@ -18,35 +19,29 @@ function fromSrt(parsedSubs, parseUserWords) {
         subText = subText.replace(/<i>/gi, '').replace(/<\/i>/gi, '').replace(/\r?\n/g, ' ').replace(/ {1,}/g, ' ').replace(/^\s*/, '').replace(/\s*$/, '');
         wholeText = wholeText + subText + ' ';
     }
-    wholeText = wholeText.replace(/[^a-zA-Z ?,.']/g, '');
+    wholeText = wholeText.replace(/[^a-zA-Z ?,.!']/g, '');
     const nlpWholeText = nlp(wholeText);
-    const ngramsForWholeText = nlp(wholeText);
+    let ngramsForWholeText = nlp(wholeText);
+    ngramsForWholeText.verbs().toInfinitive();
+    ngramsForWholeText.nouns().toSingular();
+    ngramsForWholeText.ngrams({size: 3}).map(ng => {
+        return ng.normal.normalize();
+    });
     
-    console.log(nlp(wholeText).ngrams({ size: 4 }));
-
     nlpWholeText.verbs().toInfinitive();
     nlpWholeText.nouns().toSingular();
-    let termSortByLengthAndFreq = nlpWholeText.terms().sort((a, b) => {
-        //sort by length of normalized text
-        if (a.text('reduced').length > b.text('reduced').length) {
-            return -1
-        }
-        return 1
-    }).out('freq').map((d) => {
-        if (d.reduced.length > 3) {
-            return d;
-        }
-
-    }).filter(function (item) {
-        return item != undefined && !parseUserWords.includes(item.reduced); 
-            
+    let termSortByLengthAndFreq = nlpWholeText.unigrams().filter(function (item) {
+        return item != undefined && !parseUserWords.includes(item.normal) && item.normal.length > 3;     
+    }).map(el => {
+        return tts(el.normal);
     });
     
 
-    fs.appendFileSync('./sourse/File 1 wholeText.txt', `$`);
+    console.log(ngramsForWholeText);
+
+    fs.appendFileSync('./sourse/File 1 wholeText.txt', `${wholeText}`);
     fs.appendFileSync('./sourse/File 2 subsInCourse.txt', `$`);
     fs.appendFileSync('./sourse/File 3 ngrams.txt', `$`);
-
     fs.appendFileSync('./sourse/ngramsForWholeText.txt', `${ngramsForWholeText}`);
     fs.appendFileSync('./sourse/termSortByLength.txt', `${termSortByLengthAndFreq.map(d => d.reduced)}`);
 

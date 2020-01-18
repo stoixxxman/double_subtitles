@@ -15,6 +15,7 @@
     "compromise": "^12.3.0",
     "compromise-adjectives": "0.0.4",
     "compromise-ngrams": "0.0.4",
+    "compromise-sentences": "0.0.4",
     "ffmpeg": "0.0.4",
     "fs": "0.0.1-security",
     "get-mp3-duration": "^1.0.0",
